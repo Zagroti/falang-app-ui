@@ -27,7 +27,7 @@ render(){
 
 
 
-    <Auth />
+    <Auth style={styles.container} />
     
     );
 }
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
                 
               flex:1,
               textAlign:'center',
-              color:'#000',
+              color:'#333',
               
 
         }
