@@ -15,7 +15,7 @@ import AuthScreen from './components/auth';
 
 
 //
-// Main and Maser component
+// Main and Maser Components
 //
 
 const RootStack = createStackNavigator({

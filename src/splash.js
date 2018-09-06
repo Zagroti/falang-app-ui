@@ -8,8 +8,6 @@ import Auth from './components/auth';
 
 export default class Splash extends Component {
 
-
-
         componentDidMount() {
             // do stuff while splash screen is shown
             // After having done stuff (such as async tasks) hide the splash screen
@@ -19,18 +17,13 @@ export default class Splash extends Component {
 
 
 
+        render(){
 
-render(){
+        return (
 
-
-    return (
-
-
-
-    <Auth style={styles.container} />
-    
-    );
-}
+                <Auth />
+        );
+        }
 
 }
 
