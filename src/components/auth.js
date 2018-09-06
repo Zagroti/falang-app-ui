@@ -13,7 +13,7 @@ class Auth extends Component{
 
             <View>
                 <Text>
-                    It's Auth page
+                    It's Auth page, Hello
                 </Text>
             </View>
         )

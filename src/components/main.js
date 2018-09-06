@@ -13,7 +13,7 @@ class Main extends Component{
 
             <View>
                 <Text>
-                    It's Main page
+                    It's Main page , Hello
                 </Text>
             </View>
         )
