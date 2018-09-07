@@ -9,7 +9,8 @@ import {
     KeyboardAvoidingView,
     Platform,
     TextInput,
-    Text
+    Text,
+    Button
 
   } from 'react-native';
 import colors from '../styles/colors';
@@ -26,8 +27,13 @@ class Auth extends Component{
         isLoading: false,
       }
   
+
+    
+
     render(){
 
+
+    
         return (
             <KeyboardAvoidingView
             style={styles.container}
@@ -59,6 +65,24 @@ class Auth extends Component{
                                 onChangeText={(text) => this.setState({text})}
                                 />
 
+                            
+                                <View style={styles.buttonContainer}>
+                                    <Button
+                                    
+                                    title="Register"
+                                    color="#841584"
+                                    accessibilityLabel="Register"
+                                    />
+                                </View>
+                                <View style={styles.buttonContainer}>
+                                    <Button
+                                    
+                                    title="Register"
+                                    color="#841584"
+                                    accessibilityLabel="Register"
+                                    />
+                                </View>                         
+                               
                         
 
                         </View>
@@ -109,6 +133,12 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
         height: 104,
       },
+      buttonContainer:{
+          padding:10,
+          margin: 5,
+        
+
+      }
 });
 
 
