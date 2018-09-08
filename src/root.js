@@ -10,7 +10,11 @@ import SplashAuto from 'react-native-splash-screen';
 //
 import SplashScreen from './splash';
 import MainScreen from './components/main';
-import AuthScreen from './components/auth';
+
+// auth root
+import AuthScreen from './components/auth/auth';
+import LoginScreen from './components/auth/login';
+import ActivityScreen from './components/auth/activity';
 
 
 
@@ -22,11 +26,14 @@ const RootStack = createStackNavigator({
 
     Splash : {screen : SplashScreen},
     Main : {screen : MainScreen},
+
     Auth : {screen : AuthScreen},
+    Login : {screen : LoginScreen},
+    Activity : {screen : ActivityScreen},
 
 },
 {
-    initialRouteName : 'Auth',
+    initialRouteName : 'Activity',
     headerMode: 'none'
 
 }) 
