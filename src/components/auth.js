@@ -1,7 +1,5 @@
 import React, {Component } from "react";
- 
 import {
-     
     Image, 
     StyleSheet,
     ImageBackground, 
@@ -9,10 +7,12 @@ import {
     KeyboardAvoidingView,
     Platform,
     TextInput,
-    Text,
-    Button
+    Text, 
+    ActivityIndicator,
 
   } from 'react-native';
+  import Button from './touchable/button'
+
 import colors from '../styles/colors';
  
 
@@ -28,10 +28,12 @@ class Auth extends Component{
       }
   
 
-    
+      loginEmail = async () => {
+        this.setState({ isLoading: true })
+      }
 
     render(){
-
+        const { errors, isLoading } = this.state
 
     
         return (
@@ -40,10 +42,11 @@ class Auth extends Component{
             behavior="padding"
             keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : -300}
           >
-                <ImageBackground source={require('../assets/img/climb.png')} style={styles.backgroundImage}>
+                <ImageBackground source={require('../assets/img/onboarding1.png')} style={styles.backgroundImage}>
                     <ImageBackground source={require('../assets/img/gradient.png')} style={styles.backgroundImage}>
 
-                        <View style={styles.logoContainer}>
+                       <View style={styles.maincontainer}>
+                       <View style={styles.logoContainer}>
                             
                             <Image
                                 source={require('../assets/img/logo.png')}
@@ -53,40 +56,33 @@ class Auth extends Component{
                         </View>
 
                         <View style={styles.formContainer}>
-                            <TextInput
-                                style={{height: 40}}
-                                placeholder="Type here to translate!"
-                                onChangeText={(text) => this.setState({text})}
-                                />
-
-                            <TextInput
-                                style={{height: 40}}
-                                placeholder="Type here to translate!"
-                                onChangeText={(text) => this.setState({text})}
-                                />
-
-                            
-                                <View style={styles.buttonContainer}>
-                                    <Button
-                                    
-                                    title="Register"
-                                    color="#841584"
-                                    accessibilityLabel="Register"
-                                    />
+            
+                                 <View style={styles.buttonContainer}>
+                                    <Button onPress={this.loginEmail}>
+                                        <View style={styles.buttonRegister}>
+                                        {isLoading ? (
+                                            <ActivityIndicator color="white" />
+                                        ) : (
+                                            <Text style={styles.buttonText}>عضویت در فالنگ</Text>
+                                        )}
+                                        </View>
+                                    </Button>
                                 </View>
-                                <View style={styles.buttonContainer}>
-                                    <Button
-                                    
-                                    title="Register"
-                                    color="#841584"
-                                    accessibilityLabel="Register"
-                                    />
-                                </View>                         
-                               
-                        
 
+                                <View style={styles.buttonContainer}>
+                                    <Button onPress={this.loginEmail}>
+                                        <View style={styles.buttonLogin}>
+                                        {isLoading ? (
+                                            <ActivityIndicator color="white" />
+                                        ) : (
+                                            <Text style={styles.buttonTextLogin}>ورود به فالنگ</Text>
+                                        )}
+                                        </View>
+                                    </Button>
+                                </View> 
                         </View>
-                            
+
+                       </View>
                     </ImageBackground>
                 </ImageBackground>
             </KeyboardAvoidingView>
@@ -102,6 +98,12 @@ const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
         backgroundColor: 'white',
+    
+      },
+    maincontainer:{
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'space-between',
       },
     backgroundImage: {
         width: '100%',
@@ -114,20 +116,14 @@ const styles = StyleSheet.create({
 
     },
       logoContainer: {
-        marginTop: -30,
-        minHeight: 190,
+        marginTop: 30,
+        minHeight: 320,
         justifyContent: 'center',
         alignItems: 'center', 
       },
-      linearGradient: {
-        paddingTop: 90,
-        paddingBottom: 40, 
-        backgroundColor: colors.themeBackground,
-      },
       formContainer: {
-        height:  200,
         paddingHorizontal: 30,
-        paddingTop: 60,
+        paddingBottom: 200,
       },
       logo: {
         resizeMode: 'contain',
@@ -136,9 +132,38 @@ const styles = StyleSheet.create({
       buttonContainer:{
           padding:10,
           margin: 5,
-        
+      },
+      buttonContainer: { marginTop: 20 },
+      buttonRegister: {
+        height:60,
+        backgroundColor: colors.transparentBg,
+        borderRadius: 30,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderColor: colors.white,
+        borderWidth: 2,
 
-      }
+      },
+      buttonLogin: {
+        height:60,
+        backgroundColor: colors.white,
+        borderRadius: 30,
+        justifyContent: 'center',
+        alignItems: 'center',
+       
+
+      },
+      buttonText: {
+        fontSize:20,
+        color: colors.white,
+        fontFamily: 'IRANSans_Medium',
+      },
+      buttonTextLogin: {
+        fontSize:20,
+        color: colors.red,
+        fontFamily: 'IRANSans',
+      },
+
 });
 
 
