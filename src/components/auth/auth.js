@@ -18,7 +18,9 @@ import colors from '../../styles/colors';
 
  
 class Auth extends Component{
-
+    static navigationOptions = {
+        header: null,
+      }
 
     state = {
         errors: {},
@@ -29,8 +31,11 @@ class Auth extends Component{
   
 
       loginPage = async () => {
+       
+        
         this.setState({ isLoading: true })
-        this.props.navigation.navigate('Login')
+        this.props.navigation.navigate('Login');
+      
       }
 
     render(){

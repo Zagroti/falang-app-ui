@@ -1,7 +1,9 @@
 import React from 'react';
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator , StackNavigator , TabNavigator} from 'react-navigation';
 import { Platform } from 'react-native';
 import SplashAuto from 'react-native-splash-screen';
+
+import colors from './styles/colors';
 
 
 
@@ -22,18 +24,35 @@ import ActivityScreen from './components/auth/activity';
 // Main and Maser Components
 //
 
-const RootStack = createStackNavigator({
+
+const defaultNavigationOptions = {
+    headerStyle: {
+      backgroundColor: 'red',
+      position: 'absolute',
+      borderBottomWidth: 2,
+      zIndex: 100,
+      elevation: 0,
+      top: 0,
+      left: 0,
+      right: 0,
+    },
+    headerTintColor: colors.white,
+  }
+
+
+
+const RootStack = StackNavigator({
 
     Splash : {screen : SplashScreen},
     Main : {screen : MainScreen},
 
     Auth : {screen : AuthScreen},
-    Login : {screen : LoginScreen},
+    Login : {screen : LoginScreen,  navigationOptions: { ...defaultNavigationOptions },},
     Activity : {screen : ActivityScreen},
 
 },
 {
-    initialRouteName : 'Activity',
+    initialRouteName : 'Auth',
     headerMode: 'none'
 
 }) 

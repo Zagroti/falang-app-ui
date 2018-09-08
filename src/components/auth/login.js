@@ -21,6 +21,11 @@ class Login extends Component {
         super(props);
         this.state = {  }
     }
+
+
+    onPressSending = async () => {
+        this.props.navigation.navigate('Activity'); 
+    }
     render() { 
 
         const { errors, isLoading } = this.state
@@ -54,7 +59,7 @@ class Login extends Component {
                                 <View style={styles.formContainer}>
                     
                                         <View style={styles.buttonContainer}>
-                                            <Button onPress={this.loginPage}>
+                                            <Button onPress={this.onPressSending}>
                                                 <View style={styles.buttonLogin}>
                                                 {isLoading ? (
                                                     <ActivityIndicator color="white" />
