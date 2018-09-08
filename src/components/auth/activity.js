@@ -11,9 +11,10 @@ import {
     ActivityIndicator,
 
   } from 'react-native';
+  import Icon from 'react-native-vector-icons/FontAwesome';
   import normalize from '../../styles/normalizeText';
   import Button from '../touchable/button';
-  import TextGroup from '../textgroup/text-field-group';
+  import TextGroup from '../textgroup/text-field-group'; 
   import colors from '../../styles/colors';
 
 
@@ -23,6 +24,12 @@ class Activity extends Component {
         super(props);
         this.state = {  }
     }
+
+
+onPressAcitivity = () => {
+    this.props.navigation.navigate('Main');
+}
+
     render() { 
 
         const { errors, isLoading } = this.state
@@ -52,7 +59,9 @@ class Activity extends Component {
                                 <View >
                                     <TextGroup 
                                     label=" کد فعال سازی"
-                                    placeholder="-  -  -  -" />
+                                    placeholder="-  -  -  -"
+                                     
+                                    />
                                 </View>
                                 <Text style={styles.textActivity}>در صورتی که کد فعال سازی خود را اشتباه وارد نموده اید، بر روی ارسال مجدد کلیک کنید</Text>
                                 <View style={styles.formContainerActivity}>
@@ -66,7 +75,9 @@ class Activity extends Component {
                                                     <Text style={styles.buttonTextAgin}>ارسال مجدد </Text>
 
                                                 )}
+                                                <Icon name="refresh" size={normalize(18)} color={colors.black} />
                                                 </View>
+
                                             </Button>
                                         </View>  
 
@@ -75,7 +86,7 @@ class Activity extends Component {
                                 <View style={styles.formContainer}>
                     
                                         <View style={styles.buttonContainer}>
-                                            <Button onPress={this.loginPage}>
+                                            <Button onPress={this.onPressAcitivity}>
                                                 <View style={styles.buttonLogin}>
                                                 {isLoading ? (
                                                     <ActivityIndicator color="white" />
@@ -152,6 +163,7 @@ const styles = StyleSheet.create({
 
       },
       buttonAgin: {
+        flexDirection:'row',
         height:50,
         backgroundColor: colors.white,
         borderRadius: 30,

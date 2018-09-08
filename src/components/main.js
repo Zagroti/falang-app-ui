@@ -1,8 +1,8 @@
 import React, {Component } from "react";
-import {  View , Text  } from "react-native";
-import { Container, Left, Button, Body, Title, Right, Header , Icon} from 'native-base';
+import {  View ,   } from "react-native";
+import { Container, Left, Button, Body, Title, Right, Header , Icon , Text} from 'native-base';
 
-
+import colors from '../styles/colors';
 
 
 
@@ -15,17 +15,18 @@ class Main extends Component{
 
             <Container>
 
-            <Header style={{backgroundColor: '#34495E', border:0}}>
+            <Header style={{backgroundColor: colors.themeBackground , border:0}}>
                 <Left>
-
+                <Title>فالنگ</Title>
                 </Left>
-                <Body>
-                <Title>Github...</Title>
+                <Body> 
                 </Body>
                     <Right>
+                    
                         <Button transparent>
                             <Icon name='menu'/>
                         </Button>
+                       
                     </Right>
             </Header>
 

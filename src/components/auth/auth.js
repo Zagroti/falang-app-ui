@@ -11,7 +11,8 @@ import {
     ActivityIndicator,
 
   } from 'react-native';
-  import Button from '../touchable/button'
+  import Button from '../touchable/button';
+  import Icon from 'react-native-vector-icons/FontAwesome';
 
 import colors from '../../styles/colors';
  
@@ -70,6 +71,7 @@ class Auth extends Component{
                                             <ActivityIndicator color="white" />
                                         ) : (
                                             <Text style={styles.buttonText}>عضویت در فالنگ</Text>
+                                            
                                         )}
                                         </View>
                                     </Button>
@@ -84,7 +86,9 @@ class Auth extends Component{
                                             <Text style={styles.buttonTextLogin}>ورود به فالنگ</Text>
                                         )}
                                         </View>
+                                        
                                     </Button>
+                                    
                                 </View> 
                         </View>
 
