@@ -17,6 +17,7 @@ import MainScreen from './components/main';
 import AuthScreen from './components/auth/auth';
 import LoginScreen from './components/auth/login';
 import ActivityScreen from './components/auth/activity';
+import TestScreen from './components/auth/test';
 
 
 
@@ -49,10 +50,11 @@ const RootStack = StackNavigator({
     Auth : {screen : AuthScreen},
     Login : {screen : LoginScreen,  navigationOptions: { ...defaultNavigationOptions },},
     Activity : {screen : ActivityScreen},
+    Test : {screen : TestScreen},
 
 },
 {
-    initialRouteName : 'Main',
+    initialRouteName : 'Test',
     headerMode: 'none'
 
 }) 

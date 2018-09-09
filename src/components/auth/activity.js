@@ -17,7 +17,7 @@ import {
   import TextGroup from '../textgroup/text-field-group'; 
   import colors from '../../styles/colors';
 
-
+import TimerClock from './timerComponent';
 
 class Activity extends Component {
     constructor(props) {
@@ -66,19 +66,9 @@ onPressAcitivity = () => {
                                 <Text style={styles.textActivity}>در صورتی که کد فعال سازی خود را اشتباه وارد نموده اید، بر روی ارسال مجدد کلیک کنید</Text>
                                 <View style={styles.formContainerActivity}>
                                         <View style={styles.buttonContainer}>
-                                        
-                                            <Button onPress={this.loginPage}>
-                                                <View style={styles.buttonAgin}>
-                                                {isLoading ? (
-                                                    <ActivityIndicator color="white" />
-                                                ) : (
-                                                    <Text style={styles.buttonTextAgin}>ارسال مجدد </Text>
 
-                                                )}
-                                                <Icon name="refresh" size={normalize(18)} color={colors.black} />
-                                                </View>
+                                            <TimerClock />
 
-                                            </Button>
                                         </View>  
 
                                 </View>
@@ -139,8 +129,7 @@ const styles = StyleSheet.create({
       formContainer: { 
         paddingBottom: 100,  
       },
-      formContainerActivity:{
-        paddingHorizontal: 50, 
+      formContainerActivity:{ 
         
       },
       logo: {
@@ -148,9 +137,8 @@ const styles = StyleSheet.create({
         height: 80,
         
       },
-      buttonContainer:{
-          padding:10,
-          margin: 5,
+      buttonContainer:{ 
+         
       }, 
    
       buttonLogin: {
@@ -166,9 +154,10 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         height:50,
         backgroundColor: colors.white,
-        borderRadius: 30,
-        justifyContent: 'center',
-        alignItems: 'center',
+        borderRadius: 30, 
+        alignItems: 'center', 
+        justifyContent:'center'
+        
        
 
       },
@@ -177,6 +166,7 @@ const styles = StyleSheet.create({
         color: colors.red,
         fontFamily: 'IRANSans_Medium',
         paddingHorizontal:10,
+        
         
       },
       buttonText: {
@@ -201,6 +191,23 @@ const styles = StyleSheet.create({
 
 
       },
+      timer:{
+          width:200,
+          height:50,
+          backgroundColor:colors.red,
+          position: 'absolute',
+          top:0,
+          borderRadius:30,
+          justifyContent: 'center',
+          alignItems: 'center',
+      },
+      textTimer:{
+        fontFamily:'IRANSans',
+        fontSize: Platform.OS === 'ios' ? normalize(12) : normalize(14),
+        color:colors.white,
+
+
+      }
 
 
 });

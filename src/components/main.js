@@ -4,7 +4,7 @@ import { Container, Left, Button, Body, Title, Right, Header , Icon , Text} from
 
 import colors from '../styles/colors';
 
-
+import Test from './auth/test';
 
 class Main extends Component{
 
@@ -29,6 +29,8 @@ class Main extends Component{
                        
                     </Right>
             </Header>
+
+            <Test />
 
             </Container>
         )
