@@ -50,11 +50,13 @@ const RootStack = StackNavigator({
     Auth : {screen : AuthScreen},
     Login : {screen : LoginScreen,  navigationOptions: { ...defaultNavigationOptions },},
     Activity : {screen : ActivityScreen},
+
+    
     Test : {screen : TestScreen},
 
 },
 {
-    initialRouteName : 'Test',
+    initialRouteName : 'Activity',
     headerMode: 'none'
 
 }) 

@@ -12,21 +12,16 @@ class Test extends Component {
 
 
     timer(){
-        //console.log("1");
-        
-        // if(this.state.secend > 0)
-        // this.setState({secend: this.state.secend - 1 })
-        // else
-        // console.log("timer is ended and token is expire"); // TODO latter
-        
-      var timerClock =  setInterval( () =>{ if(this.state.secend > 0)
-            this.setState({secend: this.state.secend - 1 })
-            else{
-                console.log("timer is finish & Token expire"); // TODO
-                clearTimeout(timerClock);
-         }
+
+      var timerClock =  setInterval( () =>{ 
+                if(this.state.secend > 0)
+                        this.setState({secend: this.state.secend - 1 })
+                else{
+                        console.log("timer is finish & Token expire"); // TODO later
+                        clearTimeout(timerClock);
+                    }
          }, 1000);
-         
+
         
     }
 
