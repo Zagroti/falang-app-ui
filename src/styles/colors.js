@@ -28,10 +28,12 @@ const facebook = '#3B5998'
 const google = '#db3236'
 const email = '#C5C9FF'
 
+
+ 
+
 const fee = '#5d65d4'
 
-export default {
-  black,
+export default {  
   grey,
   lightgrey,
   palegrey,
@@ -43,6 +45,7 @@ export default {
   red,
   blue,
   buttonBlue,
+  black,
 
   brand,
   pillButton,
