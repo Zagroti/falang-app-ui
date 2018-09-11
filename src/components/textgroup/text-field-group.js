@@ -6,7 +6,8 @@ import colors from '../../styles/colors'
 const styles = StyleSheet.create({
   inputLabel: {
     fontSize: 16,
-    color: colors.textContent,
+    color: colors.red,
+    fontFamily: "IRANSans"
   },
   inputBox: {
     marginVertical: 4,
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
   },
   error: {
     color: colors.google,
-    fontSize: 12,
+    fontSize: 16,
   },
 })
 

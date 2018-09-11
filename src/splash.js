@@ -1,7 +1,7 @@
 import React, {Component } from 'react';
 import { View , Text , StyleSheet , Platform } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
-import Auth from './components/auth';
+import Auth from './components/auth/auth';
 
 
 
