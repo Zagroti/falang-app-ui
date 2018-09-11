@@ -52,13 +52,13 @@ class Notification extends Component {
 const styles = StyleSheet.create({
 
     container:{ 
-        backgroundColor: colors.red,
-        height: 150,
+        backgroundColor: '#f3f3f3',
+        height: 90,
         flexDirection: 'row', 
+        paddingVertical: 10,
             
     },
-    rightSid:{ 
-        backgroundColor:colors.silver,
+    rightSid:{  
         height:70,  
         paddingHorizontal: 10, 
         flexGrow: 1,
@@ -68,10 +68,10 @@ const styles = StyleSheet.create({
 
     },
     leftSid:{
-         
-        backgroundColor:colors.black, 
+          
         height:70, 
         justifyContent: 'center',
+        paddingHorizontal:10,
         
 
     },
@@ -81,6 +81,14 @@ const styles = StyleSheet.create({
         padding: 20,
         alignItems: 'center',
         justifyContent: 'center',
+        borderColor: '#ddd', 
+        borderWidth: 0.5,
+        borderColor: '#d6d7da',
+        shadowColor: '#000',
+        shadowOffset: { width: 1, height: 2 },
+        shadowOpacity: 0.8,
+        shadowRadius: 20,
+        elevation: 1,
     },
     iconNotif:{
         backgroundColor: colors.gold,
