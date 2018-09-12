@@ -15,7 +15,7 @@ class Main extends Component{
     render(){
         return (
 
-            <ImageBackground source={require('../assets/img/english.jpg')} style={styles.backgroundImage} >
+            <ImageBackground source={require('../assets/img/silver-bg.png')} style={styles.backgroundImage} >
 
                    
 
