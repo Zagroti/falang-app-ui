@@ -3,9 +3,9 @@ import {  View ,   } from "react-native";
 import { Container, Left, Button, Body, Title, Right, Header , Icon , Text} from 'native-base';
 
 import colors from '../styles/colors';
-
-import Test from './auth/test';
+ 
 import Notif from './main/notification';
+import Progress from './main/progress';
 
 class Main extends Component{
 
@@ -30,7 +30,12 @@ class Main extends Component{
                        
                     </Right>
             </Header>
+            
+            {/* Falang Notification Components  */}
             <Notif />
+            
+            {/* Progress bar  */}
+            < Progress />
 
            
 

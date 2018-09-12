@@ -8,7 +8,7 @@ const gold = '#ffd700'
 const silver = '#c0c0c0'
 const bronze = '#cd7f32'
 const red = '#96201E'
-const blue = '#7d8aff'
+const blue = '#2874a6'
 const buttonBlue = '#5fb8e6'
 
 const brand = '#6259b2'

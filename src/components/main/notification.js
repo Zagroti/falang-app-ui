@@ -56,24 +56,18 @@ const styles = StyleSheet.create({
         height: 90,
         flexDirection: 'row', 
         paddingVertical: 10,
-            
+        elevation: 3,
     },
     rightSid:{  
         height:70,  
         paddingHorizontal: 10, 
         flexGrow: 1,
-
         justifyContent: 'center', 
-         
-
     },
     leftSid:{
-          
         height:70, 
         justifyContent: 'center',
         paddingHorizontal:10,
-        
-
     },
     btnLeft:{
         backgroundColor:colors.white,
