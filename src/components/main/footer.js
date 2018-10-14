@@ -16,9 +16,11 @@ class Footer extends Component {
             <View style={styles.container}>
  
                 <View style={styles.partOne}></View>
-                <TouchableOpacity style={styles.startContainer}>
-                    <Text style={styles.startText}>START</Text>
-                </TouchableOpacity>
+                    <View style={styles.startContainerBg}>
+                        <TouchableOpacity style={styles.startContainer}>
+                            <Text style={styles.startText}>START</Text>
+                        </TouchableOpacity>
+                    </View>
             </View>
          );
     }
@@ -30,7 +32,7 @@ const styles = StyleSheet.create({
     container:{
         position: 'absolute',
         backgroundColor: 'transparent',
-        height: 250,
+        height: 170,
         bottom : 0,
         width: '100%',  
 
@@ -40,14 +42,14 @@ const styles = StyleSheet.create({
         backgroundColor: colors.silver,
         position: 'absolute', 
         padding: 10,
-        height: 150,
+        height: 100,
         bottom : 0,
         width: '100%',  
 
     },
     startContainer:{ 
-        width:200,
-        height:200,
+        width:150,
+        height:150,
         backgroundColor:colors.red,
         justifyContent: 'center', 
         alignSelf: 'center' ,
@@ -55,6 +57,18 @@ const styles = StyleSheet.create({
         borderRadius: 300,
         borderWidth: 12,
         borderColor: colors.white,
+        
+    },
+    startContainerBg:{ 
+        width:150,
+        height:150,
+        backgroundColor:colors.red,
+        justifyContent: 'center', 
+        alignSelf: 'center' ,
+        alignItems: 'center',
+        borderRadius: 300,
+        borderWidth: 12,
+        borderColor: colors.silver,
         
     },
     startText:{

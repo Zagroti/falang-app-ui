@@ -57,7 +57,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row', 
         paddingVertical: 10,
         elevation: 3,
-        marginBottom: 100,
     },
     rightSid:{  
         height:70,  
