@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     container:{
         position: 'absolute',
         backgroundColor: 'transparent',
-        height: 250,
+        height: 170,
         bottom : 0,
         width: '100%',  
 
@@ -42,14 +42,14 @@ const styles = StyleSheet.create({
         backgroundColor: colors.silver,
         position: 'absolute', 
         padding: 10,
-        height: 150,
+        height: 100,
         bottom : 0,
         width: '100%',  
 
     },
     startContainer:{ 
-        width:200,
-        height:200,
+        width:150,
+        height:150,
         backgroundColor:colors.red,
         justifyContent: 'center', 
         alignSelf: 'center' ,
@@ -60,8 +60,8 @@ const styles = StyleSheet.create({
         
     },
     startContainerBg:{ 
-        width:200,
-        height:200,
+        width:150,
+        height:150,
         backgroundColor:colors.red,
         justifyContent: 'center', 
         alignSelf: 'center' ,
