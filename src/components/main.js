@@ -35,8 +35,8 @@ class Main extends Component{
                         {/* Falang Notification Components  */}
                         <Notif />
 
-                        <View style={{  backgroundColor:'red', top:0,}}>
-                        
+                        <View>
+
                                 {/* Progress bar  A */}
                                 < Progress  level='A' size="40%"/>
 
@@ -50,9 +50,7 @@ class Main extends Component{
                                 < Progress  level='D' size="20%" />
                         </View>
 
-                        <View>
-                                <Footer />  
-                        </View>
+                      <Footer />  
 
                         
 
@@ -67,8 +65,8 @@ const styles = StyleSheet.create({
     backgroundImage: {
         width: '100%',
         height: '100%',
-        backgroundColor: colors.white,
-        flex: 1,
+        backgroundColor: colors.white, 
+
 
         
 

@@ -15,10 +15,10 @@ class Progress extends Component {
         return { 
             padding:5,
             width:size,
-            height:30, 
+            height:20, 
             right:0,
             position: 'absolute',
-            marginTop:10,
+            marginTop:7,
             borderRadius:20,
             backgroundColor: colors.gold,
         }
@@ -59,28 +59,28 @@ const styles = StyleSheet.create({
 
 container:{
     backgroundColor: 'transparent', 
-    height: 90,
+    height: 75,
     flexDirection: 'row', 
     paddingVertical: 10,
     elevation: 3,
     padding:20,
-    marginBottom: 10,
+    marginBottom: 5,
 
 },
 barContainer:{ 
     marginTop: 10,
     backgroundColor: colors.blue,
-    padding: 10,
+    padding: 5,
     width: '100%',
-    height:50,
+    height:35,
     borderRadius: 30,
 },
 circle:{
     position: 'absolute',
     backgroundColor: colors.blue,
     padding: 10,
-    width: 80,
-    height:80,
+    width: 60,
+    height:60,
     borderRadius: 100,
     right:0,
     margin: 5,
@@ -93,7 +93,7 @@ h1:{
     alignItems: 'center',
     alignSelf: 'center',
     justifyContent: 'center',
-    fontSize: 40,
+    fontSize: 30,
     textAlign: 'center',
     fontWeight: 'bold',
 
@@ -101,19 +101,20 @@ h1:{
  circlePrsent:{
   
     backgroundColor: colors.white,
-    width:40,
-    height:40,
+    width:30,
+    height:30,
     borderRadius:100,
-    left:25,
+    left:23,
     position: 'absolute',
     alignSelf:'center',
-    elevation: 3,
+    elevation: 3, 
  },
  prcentNumber:{ 
+     paddingTop:5 ,
     textAlign:'center',
     alignSelf:'center',
     justifyContent:'center',
-    paddingTop: 12,
+    alignItems:'center', 
     color: colors.blue,
     fontSize: Platform.OS === 'ios' ? normalize(10) : normalize(12),
 
