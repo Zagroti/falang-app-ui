@@ -1,6 +1,11 @@
+
+
 import React, { Component } from 'react';
-import {View, Text, StyleSheet } from 'react-native';
+import {View, Text, StyleSheet , TouchableOpacity} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 import colors from '../../styles/colors';
+import normalize from '../../styles/normalizeText';
 
 
 class WordBoxer extends Component {
@@ -21,6 +26,11 @@ class WordBoxer extends Component {
 
                 <View style={styles.down}>
                     <View style={styles.wordAnswer}>
+
+                        <TouchableOpacity style={styles.btnView}>
+                            <Icon name="eye" size={normalize(40)} color={colors.black} />
+                            <Text>View</Text>
+                        </TouchableOpacity>
 
                     </View>
                 </View>
@@ -60,6 +70,22 @@ const styles = StyleSheet.create({
         flex:1,
         backgroundColor: colors.white,
         borderRadius: 10,
+        alignItems: 'center',
+        justifyContent:'center',
+
+    },
+    btnView:{
+        height:150,
+        width: 150,
+        borderRadius:90,
+        backgroundColor:colors.silver,
+        borderColor: colors.red,
+        borderWidth: 10,
+        alignItems: 'center',
+        justifyContent:'center',
+
+
+
     }
 })
 export default WordBoxer;

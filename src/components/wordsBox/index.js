@@ -1,3 +1,7 @@
+//
+// word boxser page is after pres start button 
+//
+
 import React, {Component} from 'react';
 import { View , Text, StyleSheet } from 'react-native';
 
