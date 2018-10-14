@@ -17,7 +17,12 @@ import MainScreen from './components/main';
 import AuthScreen from './components/auth/auth';
 import LoginScreen from './components/auth/login';
 import ActivityScreen from './components/auth/activity';
+
+import IndexScreen from './components/wordsBox/index';
+
 import TestScreen from './components/auth/test';
+
+
 
 
 
@@ -51,13 +56,16 @@ const RootStack = StackNavigator({
     Login : {screen : LoginScreen,  navigationOptions: { ...defaultNavigationOptions },},
     Activity : {screen : ActivityScreen},
 
+    Index : {screen : IndexScreen},
+
     
-    Test : {screen : TestScreen},
+    Test : {screen : ActivityScreen},
 
 },
 {
     //  initialRouteName : 'Auth',
-    initialRouteName : 'Main',
+    // initialRouteName : 'Main',
+    initialRouteName : 'Index',
     headerMode: 'none'
 
 }) 
