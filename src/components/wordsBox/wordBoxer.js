@@ -22,8 +22,8 @@ class WordBoxer extends Component {
 const styles = StyleSheet.create({
 
     container:{
-        flex:1,
-        backgroundColor: colors.white,
+        flex:5,
+        backgroundColor: colors.black,
     
     }
 })
