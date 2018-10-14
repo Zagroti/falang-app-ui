@@ -36,13 +36,15 @@ class Main extends Component{
                         <Notif />
 
                         {/* Progress bar  A */}
-                        < Progress  level='A' size="30%"/>
+                        < Progress  level='A' size="40%"/>
 
                         {/* Progress bar B */}
-                        < Progress  level='B' size="80%" />
+                        < Progress  level='B' size="50%" />
 
                         {/* Progress bar C */}
-                        < Progress  level='C' size="50%" />
+                        < Progress  level='C' size="80%" />
+
+                        < Progress  level='D' size="20%" />
 
                         <Footer />
 
