@@ -27,9 +27,7 @@ class WordBoxer extends Component {
                 Animated.timing(
                     this.spinValue,
                     {
-                      toValue: 1, 
-                      duration:500, 
-
+                      toValue: 1,   
                     }
                   ).start()
                  
@@ -42,7 +40,10 @@ class WordBoxer extends Component {
        
         
         this.spin();
-        this.setState({setAnima:false})
+        if(this.state.setAnima == true)
+            this.setState({setAnima:false})
+            else
+            this.setState({setAnima:true})
     }
 
     render() { 
@@ -88,9 +89,13 @@ class WordBoxer extends Component {
                                                     </TouchableOpacity>
 
                                               ) :(
-                                                  <View>
-                                                      <Text></Text>
-                                                  </View>
+                                              <View>
+                                                    <TouchableOpacity   onPress={this._OnclickTorun.bind(this)}>
+                                                <Icons name="eye" size={normalize(40)} color={colors.green} />
+                                                <Animated.Text  />
+                                                </TouchableOpacity>
+                                                <Text> Abonden means my life</Text>
+                                              </View>
                                               )}
                     </Animated.View>
 
