@@ -89,7 +89,7 @@ class WordBoxer extends Component {
                                                     </TouchableOpacity>
 
                                               ) :(
-                                              <View>
+                                              <View style={{transform: [{rotateY: '180deg' }] }}>
                                                     <TouchableOpacity   onPress={this._OnclickTorun.bind(this)}>
                                                 <Icons name="eye" size={normalize(40)} color={colors.green} />
                                                 <Animated.Text  />
