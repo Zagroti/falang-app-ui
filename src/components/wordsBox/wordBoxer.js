@@ -1,7 +1,7 @@
 
 
 import React, { Component } from 'react';
-import {View, Text, StyleSheet , TouchableOpacity , ImageBackground } from 'react-native';
+import {View, Text, StyleSheet , TouchableOpacity , ImageBackground , Dimensions, Animated, Easing} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Icons from 'react-native-vector-icons/FontAwesome';
 
@@ -12,9 +12,46 @@ import normalize from '../../styles/normalizeText';
 class WordBoxer extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { setAnima: true }
+        this.spinValue = new Animated.Value(0)
+
     }
+
+     
+    componentDidMount () {
+       // this.spin()
+      }
+      spin () {
+        this.spinValue.setValue(0)
+            
+                Animated.timing(
+                    this.spinValue,
+                    {
+                      toValue: 1, 
+                      duration:500, 
+
+                    }
+                  ).start()
+                 
+                  
+          
+      }
+ 
+
+    _OnclickTorun(){
+       
+        
+        this.spin();
+        this.setState({setAnima:false})
+    }
+
     render() { 
+
+        const spin = this.spinValue.interpolate({
+            inputRange: [0, 1],
+            outputRange: ['0deg', '180deg']
+          })
+
         return ( 
 
             <View style={styles.container}>
@@ -36,14 +73,31 @@ class WordBoxer extends Component {
                 </View>
 
                 <View style={styles.down}>
-                    <View style={styles.wordAnswer}>
+                
+                    <Animated.View style={{     flex:1,
+                                                backgroundColor: colors.white,
+                                                borderRadius: 10,
+                                                alignItems: 'center',
+                                                justifyContent:'center',
+                                                transform: [{rotateY: spin }] }} >
 
-                        <TouchableOpacity style={styles.btnView}>
-                            <Icons name="eye" size={normalize(40)} color={colors.themeBackground} />
-                            <Text>View</Text>
-                        </TouchableOpacity>
+                                              {this.state.setAnima ? (
+                                                        <TouchableOpacity style={styles.btnView} onPress={this._OnclickTorun.bind(this)}>
+                                                        <Icons name="eye" size={normalize(40)} color={colors.themeBackground} />
+                                                        <Animated.Text  />
+                                                    </TouchableOpacity>
 
-                    </View>
+                                              ) :(
+                                                  <View>
+                                                      <Text></Text>
+                                                  </View>
+                                              )}
+                    </Animated.View>
+
+                      
+
+                   
+               
                 </View>
 
             </View>
@@ -51,6 +105,7 @@ class WordBoxer extends Component {
     }
 }
  
+// const _animatedWith =  new Animated.Value(0);
 
 const styles = StyleSheet.create({
 
@@ -85,7 +140,14 @@ const styles = StyleSheet.create({
         backgroundColor: colors.white,
         borderRadius: 10,
         alignItems: 'center',
-        justifyContent:'center',
+        justifyContent:'center', 
+        // transform: [
+        //     { perspective: 850 },
+        //     // { translateX: - Dimensions.get('window').width * 0.24 },
+        //     { rotateY: this.animatedValue + 'deg'},
+      
+        //   ], 
+
 
     },
     btnView:{
