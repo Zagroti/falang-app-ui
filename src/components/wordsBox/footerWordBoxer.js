@@ -25,7 +25,7 @@ class Footer extends Component {
                 
                 <View style={styles.btnContainer}>
                     <TouchableOpacity style={styles.btnSpech}>
-                        <Icon name="volume-1" size={normalize(25)} color={colors.shadow} />
+                        <Icon name="volume-1" size={normalize(30)} color={colors.shadow} />
                     </TouchableOpacity>
                 </View> 
 
@@ -47,11 +47,13 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
         flexDirection:'row', 
+        backgroundColor: colors.white,
+
     },
     btnContainer:{
         flex:1, 
-        borderWidth: 1,
-        borderColor: '#333',
+        // borderWidth: 1,
+        // borderColor: '#333',
         alignContent:'center',
         alignItems:'center',
         justifyContent: 'center',
@@ -66,6 +68,8 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'center',
         elevation:5,
+        borderWidth:2,
+        borderColor: '#f1f1f1'
 
 
     },
@@ -77,6 +81,8 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'center',
         elevation:5,
+        borderWidth:2,
+        borderColor: '#e8e8e8'
 
 
     }

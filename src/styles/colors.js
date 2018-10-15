@@ -5,7 +5,7 @@ const palegrey = '#EEE'
 const white = '#FFF'
 const green = '#5a9973'
 const gold = '#ffd700'
-const silver = '#c0c0c0'
+const silver = '#e0e0e0'
 const bronze = '#cd7f32'
 const red = '#a23148'
 const blue = '#2874a6'
@@ -18,6 +18,7 @@ const themeBackground = '#a23148'
 const themeBackgroundOpacity = 'rgba(181,51,77, 0.73)'
 const themeLinearGradient = ['#ffffff', '#333333']
 const swiperDot = 'rgba(255, 255, 255, 0.8)'
+const shadow = '#c4c4c4'
 const textContent = 'rgba(35, 36, 42,0.6)'
 const empty = 'rgba(35, 36, 42, 0.2)'
 
@@ -55,7 +56,7 @@ export default {
   themeLinearGradient,
   swiperDot,
   textContent,
-  shadow: black,
+  shadow,
   empty,
 
   challengeButton,

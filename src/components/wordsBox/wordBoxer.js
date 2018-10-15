@@ -22,15 +22,15 @@ class WordBoxer extends Component {
                 <View style={styles.up}>
                     <View style={styles.wordSlider}>
                        <View style={styles.left}>
-                            <Icon name="ios-arrow-back" size={normalize(20)} color={colors.black} />
+                            <Icon name="ios-arrow-back" size={normalize(20)} color={colors.shadow} />
                        </View>
 
                        <View style={styles.center}>
-                            <Text>Abonden</Text>
+                            <Text style={styles.txtWord}>Abonden</Text>
                         </View>
 
                        <View style={styles.right}>
-                            <Icon name="ios-arrow-forward" size={normalize(20)} color={colors.black} />
+                            <Icon name="ios-arrow-forward" size={normalize(20)} color={colors.shadow} />
                        </View>
                     </View>
                 </View>
@@ -39,7 +39,7 @@ class WordBoxer extends Component {
                     <View style={styles.wordAnswer}>
 
                         <TouchableOpacity style={styles.btnView}>
-                            <Icons name="eye" size={normalize(40)} color={colors.black} />
+                            <Icons name="eye" size={normalize(40)} color={colors.themeBackground} />
                             <Text>View</Text>
                         </TouchableOpacity>
 
@@ -76,6 +76,8 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         borderColor: colors.silver,
         borderWidth: 1,
+        backgroundColor: 'rgba(197, 205, 195, 0.1)',
+
 
     },
     wordAnswer:{
@@ -113,8 +115,7 @@ const styles = StyleSheet.create({
 
     },
     center:{
-        flex:8,
-        backgroundColor: colors.black,
+        flex:8, 
         padding: 10,
         alignItems: 'center',
         justifyContent:'center',
@@ -129,6 +130,11 @@ const styles = StyleSheet.create({
         borderBottomRightRadius: 10,
         borderTopLeftRadius: 70,
         borderTopRightRadius: 10,
+    },
+    txtWord:{
+        fontSize: normalize(30),
+        color: colors.black,
+        
     }
 })
 export default WordBoxer;
