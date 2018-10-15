@@ -1,8 +1,9 @@
 
 
 import React, { Component } from 'react';
-import {View, Text, StyleSheet , TouchableOpacity} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {View, Text, StyleSheet , TouchableOpacity , ImageBackground } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
+import Icons from 'react-native-vector-icons/FontAwesome';
 
 import colors from '../../styles/colors';
 import normalize from '../../styles/normalizeText';
@@ -20,7 +21,17 @@ class WordBoxer extends Component {
 
                 <View style={styles.up}>
                     <View style={styles.wordSlider}>
+                       <View style={styles.left}>
+                            <Icon name="ios-arrow-back" size={normalize(20)} color={colors.black} />
+                       </View>
 
+                       <View style={styles.center}>
+                            <Text>Abonden</Text>
+                        </View>
+
+                       <View style={styles.right}>
+                            <Icon name="ios-arrow-forward" size={normalize(20)} color={colors.black} />
+                       </View>
                     </View>
                 </View>
 
@@ -28,7 +39,7 @@ class WordBoxer extends Component {
                     <View style={styles.wordAnswer}>
 
                         <TouchableOpacity style={styles.btnView}>
-                            <Icon name="eye" size={normalize(40)} color={colors.black} />
+                            <Icons name="eye" size={normalize(40)} color={colors.black} />
                             <Text>View</Text>
                         </TouchableOpacity>
 
@@ -44,26 +55,27 @@ class WordBoxer extends Component {
 const styles = StyleSheet.create({
 
     container:{
-        flex:5,
-        backgroundColor: colors.black,
+        flex:5, 
     
     },
     up:{
-        flex:1,
-        backgroundColor:colors. white,
+        flex:1, 
         padding: 10,
+      
+        
 
 
     },
     down:{
-        flex:2,
-        backgroundColor:colors. black,
+        flex:2, 
         padding: 10,
     },
     wordSlider:{
-        flex:1,
-        backgroundColor: colors.red,
-        borderRadius: 10,
+        flex:1, 
+        borderRadius: 10, 
+        flexDirection:'row',
+        borderColor: colors.silver,
+        borderWidth: 1,
 
     },
     wordAnswer:{
@@ -83,9 +95,40 @@ const styles = StyleSheet.create({
         borderWidth: 10,
         alignItems: 'center',
         justifyContent:'center',
+        elevation:5
 
 
 
+    },
+    left:{
+        flex:1,
+        backgroundColor: colors.silver,
+        padding: 10,
+        alignItems: 'center',
+        justifyContent:'center',
+        borderBottomLeftRadius: 10,
+        borderBottomRightRadius: 70,
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 70,
+
+    },
+    center:{
+        flex:8,
+        backgroundColor: colors.black,
+        padding: 10,
+        alignItems: 'center',
+        justifyContent:'center',
+    },
+    right:{
+        flex:1,
+        backgroundColor: colors.silver,
+        padding: 10,
+        alignItems: 'center',
+        justifyContent:'center',
+        borderBottomLeftRadius: 70,
+        borderBottomRightRadius: 10,
+        borderTopLeftRadius: 70,
+        borderTopRightRadius: 10,
     }
 })
 export default WordBoxer;

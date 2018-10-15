@@ -3,7 +3,7 @@
 //
 
 import React, {Component} from 'react';
-import { View , Text, StyleSheet } from 'react-native';
+import { View , Text, StyleSheet, ImageBackground  } from 'react-native';
 
 import Header from '../headers/headersWordBox';
 import WordBoxer from './wordBoxer';
@@ -19,7 +19,7 @@ class Index extends Component {
     render() { 
         return ( 
 
-            <View style={styles.container}>
+            <ImageBackground source={require('../../assets/img/silver-bg.png')} style={styles.container}>
 
                 <Header />
 
@@ -27,7 +27,7 @@ class Index extends Component {
 
                 <FooterWordBoxer />
              
-            </View>
+            </ImageBackground>
          );
     }
 }
