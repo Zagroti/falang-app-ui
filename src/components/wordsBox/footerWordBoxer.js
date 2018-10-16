@@ -8,9 +8,19 @@ import normalize from '../../styles/normalizeText';
 
 class Footer extends Component {
     constructor(props) {
-        super(props);
-        this.state = {  }
+        super(props); 
+        this.state = { value: 0 };
     }
+
+
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.value !== this.state.value) {
+          this.setState({ value: nextProps.value });
+        }
+      }
+
+
+
     render() { 
         return ( 
 
@@ -30,7 +40,7 @@ class Footer extends Component {
                 </View> 
 
                 <View style={styles.btnContainer}>
-                    <TouchableOpacity style={styles.btn}>
+                    <TouchableOpacity onPress={this.props.onPress }  style={styles.btn}>
                         <Icon name="like" size={normalize(20)} color={colors.green} />
                     </TouchableOpacity>
                     <Text>Yes</Text>

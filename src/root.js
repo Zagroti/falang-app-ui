@@ -20,7 +20,7 @@ import ActivityScreen from './components/auth/activity';
 
 import IndexScreen from './components/wordsBox/index';
 
-import TestScreen from './components/auth/test';
+import TestScreen from './test';
 
 
 
@@ -59,13 +59,13 @@ const RootStack = StackNavigator({
     Index : {screen : IndexScreen},
 
     
-    Test : {screen : ActivityScreen},
+    Test : {screen : TestScreen},
 
 },
 {
     //  initialRouteName : 'Auth',
-    // initialRouteName : 'Main',
-    initialRouteName : 'Index',
+    initialRouteName : 'Test',
+    // initialRouteName : 'Index',
     headerMode: 'none'
 
 }) 
