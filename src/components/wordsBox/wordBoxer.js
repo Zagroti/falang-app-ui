@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
         borderWidth: 10,
         alignItems: 'center',
         justifyContent:'center',
-        elevation:5
+        elevation:3
 
 
 

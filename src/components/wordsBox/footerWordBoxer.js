@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         borderRadius:30,
         alignItems:'center',
         justifyContent:'center',
-        elevation:5,
+        elevation:3,
         borderWidth:2,
         borderColor: '#f1f1f1'
 
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
         borderRadius:60,
         alignItems:'center',
         justifyContent:'center',
-        elevation:5,
+        elevation:3,
         borderWidth:2,
         borderColor: '#e8e8e8'
 
