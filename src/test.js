@@ -56,11 +56,20 @@ class TestComponent extends Component {
                    transform: [{rotateY: spin }] 
 
                }} >
-                <TouchableOpacity onClick={this.handleClick}  style={{backgroundColor:colors.blue, paddingHorizontal:50, paddingVertical:10}} >
-                        <Text>Play </Text>
-                    </TouchableOpacity>
 
-                    <Footer   onPress = {this.execChildFunct.bind(this)} />
+                        <View style={{     flex:1,
+                   backgroundColor: colors.white,
+                   borderRadius: 10,
+                   alignItems: 'center',
+                   justifyContent:'center',  transform: [{rotateY: '180deg' }]  }}>
+                            <TouchableOpacity onClick={this.handleClick}  style={{backgroundColor:colors.blue, paddingHorizontal:50, paddingVertical:10}} >
+                                <Text>Play </Text>
+                            </TouchableOpacity>
+
+                            <Footer   onPress = {this.execChildFunct.bind(this)} />
+                        </View>
+
+
                </Animated.View>
             </View>
          );

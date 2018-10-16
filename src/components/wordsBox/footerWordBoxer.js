@@ -27,7 +27,7 @@ class Footer extends Component {
             <View style={styles.container}>
 
                 <View style={styles.btnContainer}>
-                    <TouchableOpacity style={styles.btn}>
+                    <TouchableOpacity  onPress={this.props.onPress }  style={styles.btn}>
                         <Icon name="dislike" size={normalize(20)} color={colors.red} />
                     </TouchableOpacity>
                     <Text>No!</Text>
