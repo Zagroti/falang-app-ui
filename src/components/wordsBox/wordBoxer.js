@@ -34,6 +34,13 @@ class WordBoxer extends Component {
                   
           
       }
+      closeWordBox =  () => {
+  
+        if(this.state.setAnima == false){
+            this.setState({setAnima:true})
+            this.spin();
+        }
+      }
  
 
     _OnclickTorun(){
@@ -84,17 +91,17 @@ class WordBoxer extends Component {
 
                                               {this.state.setAnima ? (
                                                         <TouchableOpacity style={styles.btnView} onPress={this._OnclickTorun.bind(this)}>
-                                                        <Icons name="eye" size={normalize(40)} color={colors.themeBackground} />
-                                                        <Animated.Text  />
-                                                    </TouchableOpacity>
+                                                            <Icons name="eye" size={normalize(40)} color={colors.themeBackground} />
+                                                            <Animated.Text  />
+                                                        </TouchableOpacity>
 
                                               ) :(
                                               <View style={{transform: [{rotateY: '180deg' }] }}>
                                                     <TouchableOpacity   onPress={this._OnclickTorun.bind(this)}>
                                                 <Icons name="eye" size={normalize(40)} color={colors.green} />
-                                                <Animated.Text  />
-                                                </TouchableOpacity>
-                                                <Text> Abonden means my life</Text>
+                                                    <Animated.Text  />
+                                                    </TouchableOpacity>
+                                                    <Text>Abonden means my life</Text>
                                               </View>
                                               )}
                     </Animated.View>
@@ -109,8 +116,7 @@ class WordBoxer extends Component {
          );
     }
 }
- 
-// const _animatedWith =  new Animated.Value(0);
+  
 
 const styles = StyleSheet.create({
 

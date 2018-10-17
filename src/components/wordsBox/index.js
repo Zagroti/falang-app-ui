@@ -3,7 +3,7 @@
 //
 
 import React, {Component} from 'react';
-import { View , Text, StyleSheet, ImageBackground, Animated  } from 'react-native';
+import { View , StyleSheet, ImageBackground, Animated  } from 'react-native';
 
 import Header from '../headers/headersWordBox';
 import WordBoxer from './wordBoxer';
@@ -15,33 +15,39 @@ class Index extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
-        this.execChildFunct=this.execChildFunct.bind(this)
+        this.execChildFunct=this.execChildFunct.bind(this);
+        this.spinValue = new Animated.Value(0);
+        this.child = React.createRef(); // call funcation in other component
 
-        this.spinValue = new Animated.Value(0)
     }
+   
+componentDidMount(){
+    this.spin();
+}
 
-
-    spin () {
+    spin = () => {
         this.spinValue.setValue(0)
         Animated.timing(
             this.spinValue,
             {
                 toValue: 1,   
             }
-            ).start()
-                 
-                  
-          
+            ).start()     
+            this.onClick();  
+
       }
+      
 
-
+      onClick = () => {
+        this.child.current.closeWordBox();
+      };
 
 
     execChildFunct() {
         this.spin();
         }
 
-
+    
     render() { 
 
         const spin = this.spinValue.interpolate({
@@ -59,7 +65,7 @@ class Index extends Component {
                 <Header />
 
                 <Animated.View style={{
-                   flex:1,
+                   flex:5,
                    borderRadius: 10, 
                    transform: [{rotateY: spin }] 
 
@@ -69,11 +75,11 @@ class Index extends Component {
                                     borderRadius: 10,  
                                     transform: [{rotateY: '180deg' }]  }}
                                 >
-                        <WordBoxer />
-                        <FooterWordBoxer onPress = {this.execChildFunct.bind(this)} />
+                        <WordBoxer  ref={this.child} /> 
+                       
                     </View>
                 </Animated.View>
-             
+                <FooterWordBoxer onPress = {this.execChildFunct.bind(this)} />
             </ImageBackground>
          );
     }
