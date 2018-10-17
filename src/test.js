@@ -9,7 +9,6 @@ class TestComponent extends Component {
         super(props);
         this.state = { value: 0  }
         this.execChildFunct=this.execChildFunct.bind(this)
-
         this.spinValue = new Animated.Value(0)
 
     }
