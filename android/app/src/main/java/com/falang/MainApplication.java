@@ -1,4 +1,5 @@
-package com.falang;
+package com.falang; 
+
 
 import android.app.Application;
 
@@ -8,7 +9,10 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
-import com.wmjmc.reactspeech.VoicePackage;  // <--- import
+// import com.wmjmc.reactspeech.VoicePackage;  // <--- import
+import com.wenkesj.voice.VoicePackage; // <------ Add this!
+import com.mihir.react.tts.*; // Import package
+
 
 
 import java.util.Arrays;
@@ -25,9 +29,10 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-          new MainReactPackage(),   
+          new MainReactPackage(),  
             new SplashScreenReactPackage(),
-            new VoicePackage()
+            new VoicePackage(),
+            new RCTTextToSpeechModule()
       );
     }
 

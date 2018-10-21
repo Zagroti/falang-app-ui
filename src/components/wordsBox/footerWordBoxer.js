@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {View, Text, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
+import Speech from 'react-native-android-speech'
 
 import colors from '../../styles/colors';
 import normalize from '../../styles/normalizeText';
@@ -19,6 +20,22 @@ class Footer extends Component {
         }
       }
 
+      _onSpeech(){
+        Speech.speak({
+            text:'Abanden', // Mandatory
+            pitch:1.5, 
+            forceStop : false ,
+            language : 'en', 
+            country : 'US'
+        }).then(isSpeaking=>{
+            //Success Callback
+            console.log(isSpeaking);
+        }).catch(error=>{
+            //Errror Callback
+            console.log(error)
+        });
+      }
+
 
 
     render() { 
@@ -34,7 +51,7 @@ class Footer extends Component {
                 </View> 
                 
                 <View style={styles.btnContainer}>
-                    <TouchableOpacity style={styles.btnSpech}>
+                    <TouchableOpacity style={styles.btnSpech} onPress={this._onSpeech.bind(this)}>
                         <Icon name="volume-1" size={normalize(30)} color={colors.shadow} />
                     </TouchableOpacity>
                 </View> 
