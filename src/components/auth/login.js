@@ -9,11 +9,12 @@ import {
     TextInput,
     Text, 
     ActivityIndicator,
+    TouchableOpacity
 
   } from 'react-native'; 
-  import Button from '../touchable/button';
-  import TextGroup from '../textgroup/text-field-group';
+  import Button from '../touchable/button'; 
   import colors from '../../styles/colors';
+  import LogoComponent from "./logo";
 
 
 class Login extends Component {
@@ -40,39 +41,33 @@ class Login extends Component {
           >
                 <ImageBackground source={require('../../assets/img/onboarding1.png')} style={styles.backgroundImage}>
 
-                       <View style={styles.maincontainer}>
-                            <View style={styles.logoContainer}>
-                                    
-                                    <Image
-                                        source={require('../../assets/img/logo.png')}
-                                        style={styles.logo}
-                                    />
-                                    
-                                </View>
-
-                                <View style={styles.formContainer}>
-                                    <TextGroup 
-                                    label="تلفن همراه"
-                                    placeholder="+98 912 345 6789" />
-                                </View>
-                            
-                                <View style={styles.formContainer}>
-                    
-                                        <View style={styles.buttonContainer}>
-                                            <Button onPress={this.onPressSending}>
-                                                <View style={styles.buttonLogin}>
-                                                {isLoading ? (
-                                                    <ActivityIndicator color="white" />
-                                                ) : (
-                                                    <Text style={styles.buttonTextLogin}>ارسال</Text>
-                                                )}
-                                                </View>
-                                            </Button>
-                                        </View>  
-
-                                </View>
-
-                       </View> 
+                    <View style={styles.card}>
+                        <LogoComponent />
+                    </View>
+                    <View style={styles.card}>
+                        <TextInput 
+                                         
+                                        placeholder="+98 912 345 6789"
+                                        style={styles.txtInput}
+                                        maxLength={11}
+                                        keyboardType='numeric'
+                                         />
+                    </View>
+                    <View style={styles.card}>
+                                <TouchableOpacity style={styles.buttonContainer} onPress={this.onPressSending}>
+                                    <View >
+                                        <View >
+                                            {isLoading ? (
+                                                <ActivityIndicator color="white" />
+                                            ) : (
+                                                <Text style={styles.txt}>ارسال</Text>
+                                            )}
+                                        </View>
+                                    </View>
+                                </TouchableOpacity>
+                                          
+                    </View>
+        
                 </ImageBackground>
             </KeyboardAvoidingView>
          );
@@ -82,19 +77,14 @@ class Login extends Component {
 
 
 const styles = StyleSheet.create({
-    container: {
-        alignItems: 'center',
-        backgroundColor: 'white',
-    
+    container: {  
+        flex:1,
+        flexDirection:'column',  
+        
       },
-    maincontainer:{
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-      },
+ 
     backgroundImage: {
-        width: '100%',
-        height: '100%',
+    flex:1, 
 
     },
     transparentBg:{
@@ -108,49 +98,33 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center', 
       },
-      formContainer: {
-        paddingHorizontal: 30,
-        paddingBottom: 100,
-      },
-      logo: {
-        resizeMode: 'contain',
-        height: 104,
-      },
-      buttonContainer:{
-          padding:10,
-          margin: 5,
-      },
-      buttonContainer: { marginTop: 20 },
-      buttonRegister: {
-        height:60,
-        backgroundColor: colors.transparentBg,
-        borderRadius: 30,
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderColor: colors.white,
-        borderWidth: 2,
+     
+      txt:{
+      fontFamily:'IRANSans',
+      color:colors.red,
+
+     
 
       },
-      buttonLogin: {
-        height:60,
+     buttonContainer:{
+        flexDirection: 'row',
         backgroundColor: colors.white,
-        borderRadius: 30,
-        justifyContent: 'center',
-        alignItems: 'center',
-       
-
+        height:60,
+        width:'80%',
+        borderRadius: 50,
+        justifyContent: 'center', 
+        alignItems:'center'
+     },
+      card:{
+          flex:1, 
+          alignContent:'center',
+          alignItems:'center',
+          justifyContent: 'center',
       },
-      buttonText: {
-        fontSize:20,
-        color: colors.white,
-        fontFamily: 'IRANSans_Medium',
-      },
-      buttonTextLogin: {
-        fontSize:20,
-        color: colors.red,
-        fontFamily: 'IRANSans',
-      },
-
+      txtInput:{
+        width:250, 
+        color:colors.black 
+      }
 
 });
 
