@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     paddingHorizontal: 0,
     paddingVertical: 2,
+   
   },
   empty: {
     borderBottomColor: colors.empty,

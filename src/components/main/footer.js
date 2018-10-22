@@ -10,14 +10,18 @@ class Footer extends Component {
         super(props);
         this.state = {  }
     }
+
+   
     render() { 
+   
+
         return ( 
 
             <View style={styles.container}>
  
                 <View style={styles.partOne}></View>
                     <View style={styles.startContainerBg}>
-                        <TouchableOpacity style={styles.startContainer}>
+                        <TouchableOpacity style={styles.startContainer} onPress={this.props.onPress }>
                             <Text style={styles.startText}>START</Text>
                         </TouchableOpacity>
                     </View>

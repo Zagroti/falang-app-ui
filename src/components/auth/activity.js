@@ -60,7 +60,9 @@ onPressAcitivity = () => {
                                     <TextGroup 
                                     label=" کد فعال سازی"
                                     placeholder="-  -  -  -"
-                                     
+                                    style={{textAlign:'center', letterSpacing: 10 }}
+                                    maxLength={4}
+                                    keyboardType={'numeric'}
                                     />
                                 </View>
                                 <Text style={styles.textActivity}>در صورتی که کد فعال سازی خود را اشتباه وارد نموده اید، بر روی ارسال مجدد کلیک کنید</Text>

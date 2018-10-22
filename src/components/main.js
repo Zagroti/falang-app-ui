@@ -12,6 +12,12 @@ class Main extends Component{
 
 
 
+    CallWordBox(){
+        this.props.navigation.navigate('Index');
+
+    }
+
+
     render(){
         return (
 
@@ -50,7 +56,7 @@ class Main extends Component{
                                 < Progress  level='D' size="20%" />
                         </View>
 
-                      <Footer />  
+                      <Footer onPress = {this.CallWordBox.bind(this)} />  
 
                         
 

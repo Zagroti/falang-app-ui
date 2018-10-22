@@ -9,10 +9,12 @@ import {
     TextInput,
     Text, 
     ActivityIndicator,
-    TouchableOpacity
+    TouchableOpacity,
+    Keyboard
 
   } from 'react-native'; 
-  import Button from '../touchable/button'; 
+  import Button from '../touchable/button';
+  import TextGroup from '../textgroup/text-field-group';
   import colors from '../../styles/colors';
   import LogoComponent from "./logo";
 
@@ -25,6 +27,7 @@ class Login extends Component {
 
 
     onPressSending = async () => {
+        Keyboard.dismiss();
         this.props.navigation.navigate('Activity'); 
     }
     render() { 
@@ -45,12 +48,12 @@ class Login extends Component {
                         <LogoComponent />
                     </View>
                     <View style={styles.card}>
-                        <TextInput 
-                                         
+                        <TextGroup 
+                                        label="تلفن همراه"
                                         placeholder="+98 912 345 6789"
                                         style={styles.txtInput}
                                         maxLength={11}
-                                        keyboardType='numeric'
+                                        keyboardType={'numeric'}
                                          />
                     </View>
                     <View style={styles.card}>
