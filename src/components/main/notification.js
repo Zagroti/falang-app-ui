@@ -19,13 +19,9 @@ class Notification extends Component {
 
 
 
-   
-
-
         return ( 
 
             <TouchableOpacity style={styles.container} onPress={this.props.onPress }>
-                
              
                 <View style={styles.leftSid}>
                     <View style={styles.btnLeft}>
@@ -39,8 +35,6 @@ class Notification extends Component {
                     <H2>می خواهی کلمات جدید هر روز برات ارسال شود؟ </H2>
                      
                 </View>
-               
-               
           
             </TouchableOpacity>
          );
