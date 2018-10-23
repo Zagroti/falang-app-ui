@@ -12,9 +12,7 @@ class HeaderWordBox extends Component {
     }
 
 
-    _callBack(){
-        alert("Is back")
-    }
+  
 
 
     render() { 
@@ -24,7 +22,7 @@ class HeaderWordBox extends Component {
 
                 {/* first part  -------------------- */}
                  
-                    <TouchableOpacity style={styles.back} onPress={this._callBack}>
+                    <TouchableOpacity style={styles.back} onPress={this.props.onPress}>
                         <Icons name="ios-arrow-back" size={normalize(20)} color={colors.white} />
                     </TouchableOpacity>
                 

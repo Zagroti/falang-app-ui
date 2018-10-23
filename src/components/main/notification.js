@@ -24,7 +24,7 @@ class Notification extends Component {
 
         return ( 
 
-            <TouchableOpacity style={styles.container}>
+            <TouchableOpacity style={styles.container} onPress={this.props.onPress }>
                 
              
                 <View style={styles.leftSid}>

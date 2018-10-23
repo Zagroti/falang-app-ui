@@ -17,6 +17,11 @@ class Main extends Component{
 
     }
 
+    _callNotification(){
+        this.props.navigation.navigate('ProIndex');
+
+    }
+
 
     render(){
         return (
@@ -39,7 +44,7 @@ class Main extends Component{
                         </Header>
 
                         {/* Falang Notification Components  */}
-                        <Notif />
+                        <Notif onPress={this._callNotification.bind(this)} />
 
                         <View>
 

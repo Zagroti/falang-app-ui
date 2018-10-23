@@ -10,10 +10,19 @@ class ProIndex extends Component {
         super(props);
         this.state = {  }
     }
+
+
+    _callBack  () { 
+        this.props.navigation.goBack();
+    }
+
+
     render() { 
         return ( 
             <View style={styles.container}>
-                <Header title="خود آموز فالنگ" /> 
+
+                <Header title="خود آموز فالنگ" onPress={this._callBack.bind(this)} /> 
+
                 <View style={styles.card}>
                 <Image source={require('../../assets/img/victory.png')} style={{flex:1}} resizeMode="cover" />
                 </View>
@@ -25,7 +34,7 @@ class ProIndex extends Component {
                 </View>
 
                 <View style={[styles.card, styles.p2]}>
-                    <TouchableOpacity style={[styles.btn, {backgroundColor:colors.white}]}>
+                    <TouchableOpacity style={[styles.btn, {backgroundColor:colors.silver}]}>
                         <Text>The price is 2000 $</Text>
                     </TouchableOpacity>
 
@@ -49,7 +58,7 @@ const styles = StyleSheet.create({
     },
     card:{
         flex:1,
-        // backgroundColor: 'red',
+         backgroundColor: colors.white,
         // borderColor: '#333',
         // borderWidth:1,
 
@@ -58,9 +67,9 @@ const styles = StyleSheet.create({
         padding:20,
     },
     btn:{
-        flex:1,
+        height:50,
         marginHorizontal:30,
-        marginVertical:20,
+        marginVertical:10,
         borderRadius:40,
         alignItems:'center',
         justifyContent:'center'

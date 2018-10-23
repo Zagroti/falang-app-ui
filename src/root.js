@@ -68,8 +68,8 @@ const RootStack = StackNavigator({
 },
 {
     //  initialRouteName : 'Auth',
-    //  initialRouteName : 'Login',
-    initialRouteName : 'ProIndex',
+     initialRouteName : 'Login',
+    // initialRouteName : 'ProIndex',
     //  initialRouteName : 'Index',
     headerMode: 'none'
 
