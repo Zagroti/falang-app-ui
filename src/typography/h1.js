@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: Platform.OS === 'ios' ? normalize(14) : normalize(16), 
     color: colors.default,
-    fontFamily: 'IRANSans', 
+    fontFamily: 'IRANSans_Bold', 
     marginBottom: 5, 
   },
 })

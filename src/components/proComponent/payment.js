@@ -10,13 +10,21 @@ import {
 import Header from '../headers/headersWordBox';
 import colors from '../../styles/colors';
 import { H1, H2 } from "../../typography/index";
-
+import Icon from 'react-native-vector-icons/FontAwesome';
+import normalize from '../../styles/normalizeText';
 
 class PaymentComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
     }
+
+
+
+    _callPayment(){
+        alert("Payment")
+    }
+
     render() { 
         return ( 
 
@@ -27,8 +35,10 @@ class PaymentComponent extends Component {
                 <ImageBackground source={require('../../assets/img/victory.png')}
                     resizeMode="cover"  
                     style={styles.backgroundImage}>
-                        <View style={styles.iconBox}></View>
-                        <Text>9000 Toman</Text>
+                        <View style={styles.iconBox}>
+                            <Icon name="money" size={normalize(35)} color={colors.black} />
+                        </View>
+                        <Text style={styles.txtTitle}>9.000 Toman</Text>
                         <Text>For a month</Text>
                 </ImageBackground>
               
@@ -41,7 +51,7 @@ class PaymentComponent extends Component {
                         <H1>پرداخت</H1>
                         <H2 style={{color: colors.silver}}>ارسال عدد 1 به شماره 30095 روزانه 300 تومان</H2>
 
-                        <TouchableOpacity style={[styles.btn, {backgroundColor:colors.blue}]}>
+                        <TouchableOpacity style={[styles.btn, {backgroundColor:colors.blue}]} onPress={this._callPayment}>
                             <H1>پرداخت</H1>
                         </TouchableOpacity>
 
@@ -105,8 +115,15 @@ const styles = StyleSheet.create({
         borderRadius:150,
         backgroundColor:colors.white,
         elevation:4,
+        alignItems:'center',
+        justifyContent:'center', 
 
-
+    },
+    txtTitle:{
+        color:colors.red,
+        fontSize:normalize(20),
+        justifyContent:'center',
+        fontFamily:'IRANSans_Bold'
     }
 })
  
