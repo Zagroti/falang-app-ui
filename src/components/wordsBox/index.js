@@ -21,9 +21,9 @@ class Index extends Component {
 
     }
    
-componentDidMount(){
-    this.spin();
-}
+    componentDidMount(){
+        this.spin();
+    }
 
     spin = () => {
         this.spinValue.setValue(0)
@@ -56,30 +56,32 @@ componentDidMount(){
           })
 
 
-
-
         return ( 
 
             <ImageBackground source={require('../../assets/img/silver-bg.png')} style={styles.container}>
 
-                <Header />
+                    <Header />
 
-                <Animated.View style={{
-                   flex:5,
-                   borderRadius: 10, 
-                   transform: [{rotateY: spin }] 
+                    <Animated.View style={{
+                    flex:5,
+                    borderRadius: 10, 
+                    transform: [{rotateY: spin }] 
 
-               }} >
-                    <View style={{     
-                                    flex:1, 
-                                    borderRadius: 10,  
-                                    transform: [{rotateY: '180deg' }]  }}
-                                >
-                        <WordBoxer  ref={this.child} /> 
-                       
-                    </View>
-                </Animated.View>
-                <FooterWordBoxer onPress = {this.execChildFunct.bind(this)} />
+                                        }}>
+
+                            <View style={{     
+                                            flex:1, 
+                                            borderRadius: 10,  
+                                            transform: [{rotateY: '180deg' }]  }}
+                                        >
+
+                                    <WordBoxer  ref={this.child} /> 
+                            
+                            </View>
+                    </Animated.View>
+                    
+                    <FooterWordBoxer onPress = {this.execChildFunct.bind(this)} />
+
             </ImageBackground>
          );
     }

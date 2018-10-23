@@ -1,7 +1,15 @@
 
 
 import React, { Component } from 'react';
-import {View, Text, StyleSheet , TouchableOpacity , ImageBackground , Dimensions, Animated, Easing} from 'react-native';
+import {
+    View, 
+    Text, 
+    StyleSheet , 
+    TouchableOpacity , 
+    Animated, 
+    Easing,
+        
+} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Icons from 'react-native-vector-icons/FontAwesome';
 
@@ -44,8 +52,7 @@ class WordBoxer extends Component {
  
 
     _OnclickTorun(){
-       
-        
+               
         this.spin();
         if(this.state.setAnima == true)
             this.setState({setAnima:false})
@@ -65,19 +72,19 @@ class WordBoxer extends Component {
             <View style={styles.container}>
 
                 <View style={styles.up}>
-                    <View style={styles.wordSlider}>
-                       <View style={styles.left}>
-                            <Icon name="ios-arrow-back" size={normalize(20)} color={colors.shadow} />
-                       </View>
+                        <View style={styles.wordSlider}>
+                                <View style={styles.left}>
+                                        <Icon name="ios-arrow-back" size={normalize(20)} color={colors.shadow} />
+                                </View>
 
-                       <View style={styles.center}>
-                            <Text style={styles.txtWord}>Abonden</Text>
+                                <View style={styles.center}>
+                                        <Text style={styles.txtWord}>Abonden</Text>
+                                    </View>
+
+                                <View style={styles.right}>
+                                        <Icon name="ios-arrow-forward" size={normalize(20)} color={colors.shadow} />
+                                </View>
                         </View>
-
-                       <View style={styles.right}>
-                            <Icon name="ios-arrow-forward" size={normalize(20)} color={colors.shadow} />
-                       </View>
-                    </View>
                 </View>
 
                 <View style={styles.down}>
@@ -128,9 +135,6 @@ const styles = StyleSheet.create({
         flex:1, 
         padding: 10,
       
-        
-
-
     },
     down:{
         flex:2, 
@@ -171,8 +175,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent:'center',
         elevation:3
-
-
 
     },
     left:{

@@ -14,11 +14,11 @@ class Footer extends Component {
     }
 
 
-    componentWillReceiveProps(nextProps) {
-        if(nextProps.value !== this.state.value) {
-          this.setState({ value: nextProps.value });
+        componentWillReceiveProps(nextProps) {
+            if(nextProps.value !== this.state.value) {
+            this.setState({ value: nextProps.value });
+            }
         }
-      }
 
       _onSpeech(){
         Speech.speak({
