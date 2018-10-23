@@ -15,27 +15,26 @@ class PaymentComponent extends Component {
 
             <View style={styles.container }>
 
-            <Header  title="Taxt"/>
+            <Header  title="خرید بسته خودآموز"/>
         
              <ImageBackground source={require('../../assets/img/victory.png')}       resizeMode="cover"  style={styles.backgroundImage}></ImageBackground>
               
                 <View style={styles.card}>
                     <View style={styles.box}>
                     <View style={styles.imgLogo}>
-                    <Image source={require('../../assets/img/irancell.png')} borderRadius={5}   resizeMode="contain" style={{    height:100,
-        width:100, }} />
+                        <Image source={require('../../assets/img/irancell.png')} borderRadius={5}   resizeMode="contain" style={{  height:80, width:80, }} />
                     </View>
-                       
+
                         <Text>Sample</Text>
                         <Text>Sample WOrdl for buy</Text>
 
-                    <TouchableOpacity style={[styles.btn, {backgroundColor:colors.blue}]}>
-                        <Text>Buy</Text>
-                    </TouchableOpacity>
+                        <TouchableOpacity style={[styles.btn, {backgroundColor:colors.blue}]}>
+                            <Text>Buy</Text>
+                        </TouchableOpacity>
 
                     </View>
                 </View>
-            
+        
             </View>
          );
     }
@@ -49,16 +48,14 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         backgroundColor:colors.white,
 
-
     },
     backgroundImage:{
-        flex:1,
-        
+        flex:1, 
   
     },
     card:{
         flex:1,
-        justifyContent:'space-around'
+        justifyContent:'space-around',
 
     },
     box:{
@@ -67,17 +64,14 @@ const styles = StyleSheet.create({
         margin:10,
         borderRadius:10,
         alignItems:'center',
-        justifyContent:'space-around'
-
-
+        justifyContent:'space-around',
+        
     },
     imgLogo:{ 
-        
-        borderRadius:10, 
-        marginTop:-20,  
+        borderRadius:10,  
         borderWidth:5,
-        borderColor:'#ccc'
-
+        borderColor:'#ccc',
+        marginTop:20,
 
     },
     btn:{
@@ -87,8 +81,7 @@ const styles = StyleSheet.create({
         borderRadius:40,
         alignItems:'center',
         justifyContent:'center', 
-        width:'80%'
-
+        width:'80%',
 
     }
 })
