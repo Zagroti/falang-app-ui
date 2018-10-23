@@ -21,6 +21,7 @@ import ActivityScreen from './components/auth/activity';
 import IndexScreen from './components/wordsBox/index';  // show words
 
 import ProScreen from './components/proComponent/proIndex';
+import PaymentScreen from './components/proComponent/payment';
 
 import TestScreen from './test';
 
@@ -61,6 +62,7 @@ const RootStack = StackNavigator({
     Index : {screen : IndexScreen},
 
     ProIndex : {screen : ProScreen},
+    Paymnet : {screen : PaymentScreen},
 
     
     Test : {screen : TestScreen},
@@ -68,8 +70,8 @@ const RootStack = StackNavigator({
 },
 {
     //  initialRouteName : 'Auth',
-     initialRouteName : 'Login',
-    // initialRouteName : 'ProIndex',
+    //  initialRouteName : 'Login',
+    initialRouteName : 'Paymnet',
     //  initialRouteName : 'Index',
     headerMode: 'none'
 
