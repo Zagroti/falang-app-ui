@@ -1,5 +1,7 @@
 import React , {Component} from 'react';
-import { View , Text , StyleSheet , TouchableOpacity } from 'react-native';
+import { View , Text , StyleSheet , TouchableOpacity, ImageBackground , Image} from 'react-native';
+import Header from '../headers/headersWordBox';
+import colors from '../../styles/colors';
 
 
 
@@ -12,7 +14,28 @@ class PaymentComponent extends Component {
         return ( 
 
             <View style={styles.container }>
-                <Text>Payment Page </Text>
+
+            <Header  title="Taxt"/>
+        
+             <ImageBackground source={require('../../assets/img/victory.png')}       resizeMode="cover"  style={styles.backgroundImage}></ImageBackground>
+              
+                <View style={styles.card}>
+                    <View style={styles.box}>
+                    <View style={styles.imgLogo}>
+                    <Image source={require('../../assets/img/irancell.png')} borderRadius={5}   resizeMode="contain" style={{    height:100,
+        width:100, }} />
+                    </View>
+                       
+                        <Text>Sample</Text>
+                        <Text>Sample WOrdl for buy</Text>
+
+                    <TouchableOpacity style={[styles.btn, {backgroundColor:colors.blue}]}>
+                        <Text>Buy</Text>
+                    </TouchableOpacity>
+
+                    </View>
+                </View>
+            
             </View>
          );
     }
@@ -23,6 +46,49 @@ class PaymentComponent extends Component {
 const styles = StyleSheet.create({
     container:{
         flex:1,
+        flexDirection: 'column',
+        backgroundColor:colors.white,
+
+
+    },
+    backgroundImage:{
+        flex:1,
+        
+  
+    },
+    card:{
+        flex:1,
+        justifyContent:'space-around'
+
+    },
+    box:{
+        backgroundColor:colors.silver,
+        height:250,
+        margin:10,
+        borderRadius:10,
+        alignItems:'center',
+        justifyContent:'space-around'
+
+
+    },
+    imgLogo:{ 
+        
+        borderRadius:10, 
+        marginTop:-20,  
+        borderWidth:5,
+        borderColor:'#ccc'
+
+
+    },
+    btn:{
+        height:50,
+        marginHorizontal:30,
+        marginVertical:10,
+        borderRadius:40,
+        alignItems:'center',
+        justifyContent:'center', 
+        width:'80%'
+
 
     }
 })
