@@ -5,8 +5,7 @@ import normalize from '../styles/normalizeText'
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: Platform.OS === 'ios' ? normalize(14) : normalize(16),
-    fontWeight: '900',
+    fontSize: Platform.OS === 'ios' ? normalize(14) : normalize(16), 
     color: colors.default,
     fontFamily: 'IRANSans', 
     marginBottom: 5, 

@@ -1,8 +1,15 @@
 import React , {Component} from 'react';
-import { View , Text , StyleSheet , TouchableOpacity, ImageBackground , Image} from 'react-native';
+import { 
+    View , 
+    Text , 
+    StyleSheet , 
+    TouchableOpacity, 
+    ImageBackground , 
+    Image,
+            } from 'react-native';
 import Header from '../headers/headersWordBox';
 import colors from '../../styles/colors';
-
+import { H1, H2 } from "../../typography/index";
 
 
 class PaymentComponent extends Component {
@@ -15,21 +22,27 @@ class PaymentComponent extends Component {
 
             <View style={styles.container }>
 
-            <Header  title="خرید بسته خودآموز"/>
+                <Header  title="خرید بسته خودآموز"/>
         
-             <ImageBackground source={require('../../assets/img/victory.png')}       resizeMode="cover"  style={styles.backgroundImage}></ImageBackground>
+                <ImageBackground source={require('../../assets/img/victory.png')}
+                    resizeMode="cover"  
+                    style={styles.backgroundImage}>
+                        <View style={styles.iconBox}></View>
+                        <Text>9000 Toman</Text>
+                        <Text>For a month</Text>
+                </ImageBackground>
               
                 <View style={styles.card}>
                     <View style={styles.box}>
-                    <View style={styles.imgLogo}>
-                        <Image source={require('../../assets/img/irancell.png')} borderRadius={5}   resizeMode="contain" style={{  height:80, width:80, }} />
-                    </View>
+                        <View style={styles.imgLogo}>
+                            <Image source={require('../../assets/img/irancell.png')} borderRadius={5}   resizeMode="contain" style={{  height:80, width:80, }} />
+                        </View>
 
-                        <Text>Sample</Text>
-                        <Text>Sample WOrdl for buy</Text>
+                        <H1>پرداخت</H1>
+                        <H2 style={{color: colors.silver}}>ارسال عدد 1 به شماره 30095 روزانه 300 تومان</H2>
 
                         <TouchableOpacity style={[styles.btn, {backgroundColor:colors.blue}]}>
-                            <Text>Buy</Text>
+                            <H1>پرداخت</H1>
                         </TouchableOpacity>
 
                     </View>
@@ -51,6 +64,8 @@ const styles = StyleSheet.create({
     },
     backgroundImage:{
         flex:1, 
+        justifyContent:'center',
+        alignItems:'center'
   
     },
     card:{
@@ -71,7 +86,7 @@ const styles = StyleSheet.create({
         borderRadius:10,  
         borderWidth:5,
         borderColor:'#ccc',
-        marginTop:20,
+        marginTop:5,
 
     },
     btn:{
@@ -82,6 +97,15 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'center', 
         width:'80%',
+
+    },
+    iconBox:{
+        height:90,
+        width:90,
+        borderRadius:150,
+        backgroundColor:colors.white,
+        elevation:4,
+
 
     }
 })
