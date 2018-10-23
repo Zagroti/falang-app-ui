@@ -18,7 +18,9 @@ import AuthScreen from './components/auth/auth';
 import LoginScreen from './components/auth/login';
 import ActivityScreen from './components/auth/activity';
 
-import IndexScreen from './components/wordsBox/index';
+import IndexScreen from './components/wordsBox/index';  // show words
+
+import ProScreen from './components/proComponent/proIndex';
 
 import TestScreen from './test';
 
@@ -58,14 +60,16 @@ const RootStack = StackNavigator({
 
     Index : {screen : IndexScreen},
 
+    ProIndex : {screen : ProScreen},
+
     
     Test : {screen : TestScreen},
 
 },
 {
     //  initialRouteName : 'Auth',
-     initialRouteName : 'Login',
-    // initialRouteName : 'Test',
+    //  initialRouteName : 'Login',
+    initialRouteName : 'ProIndex',
     //  initialRouteName : 'Index',
     headerMode: 'none'
 
