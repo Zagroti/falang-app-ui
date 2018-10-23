@@ -12,7 +12,7 @@ class ProIndex extends Component {
     }
 
 
-    _callBack  () { 
+    _callBack() { 
         this.props.navigation.goBack();
     }
 
@@ -20,11 +20,10 @@ class ProIndex extends Component {
     render() { 
         return ( 
             <View style={styles.container}>
-
                 <Header title="خود آموز فالنگ" onPress={this._callBack.bind(this)} /> 
 
                 <View style={styles.card}>
-                <Image source={require('../../assets/img/victory.png')} style={{flex:1}} resizeMode="cover" />
+                    <Image source={require('../../assets/img/victory.png')} style={{flex:1}} resizeMode="cover" />
                 </View>
 
                 <View style={[styles.card, styles.p2]}>
@@ -38,11 +37,9 @@ class ProIndex extends Component {
                         <Text>The price is 2000 $</Text>
                     </TouchableOpacity>
 
-                          <TouchableOpacity style={[styles.btn, {backgroundColor:colors.blue}]}>
+                    <TouchableOpacity style={[styles.btn, {backgroundColor:colors.blue}]}>
                         <Text>Buy</Text>
                     </TouchableOpacity>
-
-
                 </View>
             </View>
          );
