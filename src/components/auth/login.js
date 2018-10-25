@@ -58,15 +58,15 @@ class Login extends Component {
                     </View>
                     <View style={styles.card}>
                                 <TouchableOpacity style={styles.buttonContainer} onPress={this.onPressSending}>
-                                    <View >
                                         <View >
-                                            {isLoading ? (
-                                                <ActivityIndicator color="white" />
-                                            ) : (
-                                                <Text style={styles.txt}>ارسال</Text>
-                                            )}
+                                            <View >
+                                                {isLoading ? (
+                                                    <ActivityIndicator color="white" />
+                                                ) : (
+                                                    <Text style={styles.txt}>ارسال</Text>
+                                                )}
+                                            </View>
                                         </View>
-                                    </View>
                                 </TouchableOpacity>
                                           
                     </View>
