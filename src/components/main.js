@@ -30,7 +30,7 @@ class Main extends Component{
 
                    
 
-                        <Header style={{backgroundColor: colors.themeBackground , border:0}}>
+                        {/* <Header style={{backgroundColor: colors.themeBackground , border:0}}>
                             <Left>
                             <Title>فالنگ</Title>
                             </Left>
@@ -41,7 +41,7 @@ class Main extends Component{
                                         <Icon name='menu'/>
                                     </Button>
                                 </Right>
-                        </Header>
+                        </Header> */}
 
                         {/* Falang Notification Components  */}
                         <Notif onPress={this._callNotification.bind(this)} />

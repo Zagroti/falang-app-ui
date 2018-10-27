@@ -52,20 +52,38 @@ const defaultNavigationOptions = {
 
 const RootStack = StackNavigator({
 
-    Splash : {screen : SplashScreen},
-    Main : {screen : MainScreen},
+    Splash : {
+        screen : SplashScreen
+    },
+    Main : {
+        screen : MainScreen
+    },
 
-    Auth : {screen : AuthScreen},
-    Login : {screen : LoginScreen,  navigationOptions: { ...defaultNavigationOptions },},
-    Activity : {screen : ActivityScreen},
+    Auth : {
+        screen : AuthScreen
+    },
+    Login : {
+        screen : LoginScreen,  navigationOptions: { ...defaultNavigationOptions },
+    },
+    Activity : {
+        screen : ActivityScreen
+    },
 
-    Index : {screen : IndexScreen},
+    Index : {
+        screen : IndexScreen
+    },
 
-    ProIndex : {screen : ProScreen},
-    Paymnet : {screen : PaymentScreen},
+    ProIndex : {
+        screen : ProScreen
+    },
+    Paymnet : {
+        screen : PaymentScreen
+    },
 
     
-    Test : {screen : TestScreen},
+    Test : {
+        screen : TestScreen
+    },
 
 },
 {
