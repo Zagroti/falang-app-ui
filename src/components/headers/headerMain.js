@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import {View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { DrawerNavigator, DrawerItems}  from 'react-navigation';
-import Icon from 'react-native-vector-icons/dist/Feather';
+import Icons from 'react-native-vector-icons/Ionicons';
+import colors from '../../styles/colors';
+
 
  
 
@@ -27,7 +29,7 @@ class HeaderMain extends Component {
         </View>
 
         <TouchableOpacity onPress = { this.onButtonPress }  style={styles.menuContainer}>
-            <Icon name="menu" size={24} color="#fff"  />
+            <Icons name="ios-menu" size={24} color="#fff"  />
         </TouchableOpacity>
      </View>
          
@@ -42,7 +44,7 @@ const styles = StyleSheet.create({
 
   container:{
     height:50,
-    backgroundColor:'#E74C3C',
+    backgroundColor:colors.themeBackground,
     flexDirection: 'row',
 
   },

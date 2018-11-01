@@ -7,6 +7,7 @@ import colors from '../styles/colors';
 import Notif from './main/notification';
 import Progress from './main/progress';
 import Footer from './main/footer';
+import HeaderMain from "./headers/headerMain";
 
 class Main extends Component{
 
@@ -41,9 +42,11 @@ class Main extends Component{
                                         <Icon name='menu'/>
                                     </Button>
                                 </Right>
-                        </Header> */}
+                        
 
                         {/* Falang Notification Components  */}
+
+                        <HeaderMain />
                         <Notif onPress={this._callNotification.bind(this)} />
 
                         <View>

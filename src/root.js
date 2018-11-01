@@ -87,9 +87,9 @@ const RootStack = StackNavigator({
 
 },
 {
-    //  initialRouteName : 'Auth',
+     initialRouteName : 'Auth',
     //  initialRouteName : 'Login',
-    initialRouteName : 'Paymnet',
+    // initialRouteName : 'Paymnet',
     //  initialRouteName : 'Index',
     headerMode: 'none'
 
