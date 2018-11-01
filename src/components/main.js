@@ -1,94 +1,99 @@
-import React, {Component } from "react";
-import {  View , StyleSheet , ImageBackground  } from "react-native";
-import { Container, Left, Button, Body, Title, Right, Header , Icon} from 'native-base';
+import React, { Component } from 'react';
+import {View, Text, StyleSheet, Button, ImageBackground, Image } from 'react-native';
+import { DrawerNavigator, DrawerItems}  from 'react-navigation';
 
-import colors from '../styles/colors';
+import HomeScreen from './screens/main';
  
-import Notif from './main/notification';
-import Progress from './main/progress';
-import Footer from './main/footer';
-import HeaderMain from "./headers/headerMain";
-
-class Main extends Component{
 
 
+class Main extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {  }
+  }
 
-    CallWordBox(){
-        this.props.navigation.navigate('Index');
+  render() { 
+    return ( 
 
-    }
-
-    _callNotification(){
-        this.props.navigation.navigate('ProIndex');
-
-    }
-
-
-    render(){
-        return (
-
-            <ImageBackground source={require('../assets/img/silver-bg.png')} style={styles.backgroundImage} >
-
-                   
-
-                        {/* <Header style={{backgroundColor: colors.themeBackground , border:0}}>
-                            <Left>
-                            <Title>فالنگ</Title>
-                            </Left>
-                            <Body> 
-                            </Body>
-                                <Right>
-                                    <Button transparent>
-                                        <Icon name='menu'/>
-                                    </Button>
-                                </Right>
-                        
-
-                        {/* Falang Notification Components  */}
-
-                        <HeaderMain />
-                        <Notif onPress={this._callNotification.bind(this)} />
-
-                        <View>
-
-                                {/* Progress bar  A */}
-                                < Progress  level='A' size="40%"/>
-
-                                {/* Progress bar B */}
-                                < Progress  level='B' size="50%" />
-
-                                {/* Progress bar C */}
-                                < Progress  level='C' size="80%" />
-
-                                {/* Progress bar D */}
-                                < Progress  level='D' size="20%" />
-                        </View>
-
-                      <Footer onPress = {this.CallWordBox.bind(this)} />  
-
-                        
-
-                    
-
-            </ImageBackground>
-        )
-    }
+          <MyApp />
+      
+     );
+  }
 }
 
-const styles = StyleSheet.create({
-    backgroundImage: {
-        width: '100%',
-        height: '100%',
-        backgroundColor: colors.white, 
+const customDrawerComponent = (props)  => (
+
+  <View style={styles.container}>
+      {/* <ImageBackground source={require('./src/assets/img/bg.jpg')} style={styles.imageContainer}>
+          <View style={styles.AvatarContainer}>
+            <Image source={require('./src/assets/img/avatar.png')}    style={styles.avatarSize} />
+          </View>
+      </ImageBackground> */}
+      <DrawerItems {...props} />
+
+  </View>
+)
 
 
-        
+const MyApp = DrawerNavigator({
+  Home:{
+    screen : HomeScreen
+  },
+  Settings:{
+    screen : HomeScreen
+  },
+  Notification:{
+    screen : HomeScreen
+  },
+  About:{
+    screen : HomeScreen
+  }
+},{
+  drawerPosition:'right',    // right
+  contentComponent: customDrawerComponent,
+  drawerOpenRoute: "DrawerOpen",
+  drawerCloseRoute: "DrawerClose",
+  drawerToggleRoute: "DrawerToggle",
+  contentOptions: {
+    activeTintColor: 'rgb(234, 94, 32)'
 
-    },
+}
+
+
 })
 
 
-export default Main ;
+const styles = StyleSheet.create({
 
+  container:{
+    flex:1,
+    backgroundColor:'#fcfcfc'
+  },
+  imageContainer:{
+    backgroundColor:'#444',
+    height: 150,
+    alignItems: 'center',
+    justifyContent: 'center',
 
+  },
+  avatarSize:{
+    
+    height:80,
+    width: 80,
+   
+  },
+  AvatarContainer:{
+    height:110,
+    width: 110,
+    backgroundColor:'#fff',
+    borderRadius:100,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding:30,
+    borderWidth:3,
+    borderColor:'#333'
+
+  }
+})
  
+export default Main;
