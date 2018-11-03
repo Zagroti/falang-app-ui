@@ -13,12 +13,12 @@ class Main extends Component{
 
 
 
-    CallWordBox(){
+    CallWordBox = () =>{
         this.props.navigation.navigate('Index');
 
     }
 
-    _callNotification(){
+    _callNotification = () =>{
         this.props.navigation.navigate('ProIndex');
 
     }
@@ -88,5 +88,7 @@ const styles = StyleSheet.create({
 
 export default Main ;
 
+
+ 
 
  
