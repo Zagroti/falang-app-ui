@@ -120,6 +120,8 @@ const App = SwitchNavigator(
 
 
 
+
+
 //
 // export App from root stack
 //
@@ -129,6 +131,7 @@ export default class Root  extends React.Component{
     componentDidMount() {
         if (Platform.OS !== 'ios') SplashAuto.hide();
         console.disableYellowBox = true
+
       }
 
 
