@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator , StackNavigator , TabNavigator, SwitchNavigator} from 'react-navigation';
+import { createStackNavigator , StackNavigator , TabNavigator, SwitchNavigator, createDrawerNavigator} from 'react-navigation';
 import { Platform } from 'react-native';
 import SplashAuto from 'react-native-splash-screen';
 
@@ -54,10 +54,6 @@ const AuthLoadingScreen = StackNavigator({
     Splash : {
         screen : SplashScreen
     },
-    Main : {
-        screen : MainScreen
-    },
-
     Auth : {
         screen : AuthScreen
     },
@@ -87,7 +83,7 @@ const AuthLoadingScreen = StackNavigator({
 
 
  // All orginal Component After login in hear ----->
-const MainStack = StackNavigator({
+const MainStack = createStackNavigator({
     Main : {
         screen : MainScreen
     },
@@ -108,10 +104,28 @@ const MainStack = StackNavigator({
 })
 
 
+ // All orginal Drawer menu is hear ----->
+ const Drawer = createDrawerNavigator({
+    Home : {
+        screen : MainStack
+    },
+    Setting : {
+        screen : MainStack
+    },
+    About : {
+        screen : MainStack
+    },
+
+},
+{
+    navigationOptions: {...defaultNavigationOptions}
+})
+
+
 const App = SwitchNavigator(
     {
       AuthLoading: AuthLoadingScreen,
-      App: MainStack, 
+      App: Drawer, 
     },
     {
       initialRouteName: 'AuthLoading',
