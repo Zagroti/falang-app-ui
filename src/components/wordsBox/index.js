@@ -60,7 +60,7 @@ class Index extends Component {
 
             <ImageBackground source={require('../../assets/img/silver-bg.png')} style={styles.container}>
 
-                    <Header />
+                    {/* <Header /> */}
 
                     <Animated.View style={{
                     flex:5,

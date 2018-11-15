@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator , StackNavigator , TabNavigator} from 'react-navigation';
+import { createStackNavigator , StackNavigator , TabNavigator, SwitchNavigator} from 'react-navigation';
 import { Platform } from 'react-native';
 import SplashAuto from 'react-native-splash-screen';
 
@@ -11,7 +11,7 @@ import colors from './styles/colors';
 //  import Our Component
 //
 import SplashScreen from './splash';
-import MainScreen from './components/main';
+import MainScreen from './components/screens/main';
 
 // auth root
 import AuthScreen from './components/auth/auth';
@@ -36,9 +36,8 @@ import TestScreen from './test';
 
 const defaultNavigationOptions = {
     headerStyle: {
-      backgroundColor: 'red',
+      backgroundColor: colors.red,
       position: 'absolute',
-      borderBottomWidth: 2,
       zIndex: 100,
       elevation: 0,
       top: 0,
@@ -49,8 +48,8 @@ const defaultNavigationOptions = {
   }
 
 
-
-const RootStack = StackNavigator({
+// All Auth component befor login is hear ------>
+const AuthLoadingScreen = StackNavigator({
 
     Splash : {
         screen : SplashScreen
@@ -69,16 +68,7 @@ const RootStack = StackNavigator({
         screen : ActivityScreen
     },
 
-    Index : {
-        screen : IndexScreen
-    },
 
-    ProIndex : {
-        screen : ProScreen
-    },
-    Paymnet : {
-        screen : PaymentScreen
-    },
 
     
     Test : {
@@ -96,6 +86,40 @@ const RootStack = StackNavigator({
 }) 
 
 
+ // All orginal Component After login in hear ----->
+const MainStack = StackNavigator({
+    Main : {
+        screen : MainScreen
+    },
+    Index : {
+        screen : IndexScreen
+    },
+
+    ProIndex : {
+        screen : ProScreen
+    },
+    Paymnet : {
+        screen : PaymentScreen
+    },
+
+},
+{
+    navigationOptions: {...defaultNavigationOptions}
+})
+
+
+const App = SwitchNavigator(
+    {
+      AuthLoading: AuthLoadingScreen,
+      App: MainStack, 
+    },
+    {
+      initialRouteName: 'AuthLoading',
+    },
+  )
+
+
+
 //
 // export App from root stack
 //
@@ -109,9 +133,9 @@ export default class Root  extends React.Component{
 
 
     render(){
-        return(
-
-            <RootStack />
+        return( 
+            <App />
+        
         );
     }
 }

@@ -44,7 +44,7 @@ class Main extends Component{
             <ImageBackground source={require('../../assets/img/silver-bg.png')} style={styles.backgroundImage} >
 
 
-                        <HeaderMain navigation={this.props.navigation} title="Home"  />
+                        {/* <HeaderMain navigation={this.props.navigation} title="Home"  /> */}
                         <Notif onPress={this._callNotification.bind(this)} />
 
                         <View>

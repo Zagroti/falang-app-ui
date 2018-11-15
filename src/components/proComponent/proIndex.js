@@ -20,7 +20,7 @@ class ProIndex extends Component {
     render() { 
         return ( 
             <View style={styles.container}>
-                <Header title="خود آموز فالنگ" onPress={this._callBack.bind(this)} /> 
+                {/* <Header title="خود آموز فالنگ" onPress={this._callBack.bind(this)} />  */}
 
                 <View style={styles.card}>
                     <Image source={require('../../assets/img/victory.png')} style={{flex:1}} resizeMode="cover" />
