@@ -14,6 +14,7 @@ import colors from './styles/colors';
 import SplashScreen from './splash';
 import MainScreen from './components/screens/main';
 import MyprofileScreen from './components/screens/myProfile';
+import MyfavoritScreen from './components/screens/myFavorit';
 
 // auth root
 import AuthScreen from './components/auth/auth';
@@ -102,8 +103,10 @@ const MainStack = createStackNavigator({
     },    
     MyProfile : {
         screen : MyprofileScreen
+    },   
+    MyFavorit : {
+        screen : MyfavoritScreen
     },
-
     ProIndex : {
         screen : ProScreen
     },

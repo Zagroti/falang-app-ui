@@ -43,7 +43,7 @@ class SideMenu extends Component {
             </View>
 
             <View style={styles.navSectionStyle}>
-              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('ProIndex')}>
+              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('MyFavorit')}>
               کلمات مورد علاقه من
               </Text>
               <Icon.FontAwesome name="heart-o" size={22} style={styles.iconNav} />
