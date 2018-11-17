@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet } from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 //
 //
@@ -12,7 +12,14 @@ class MyProfile extends Component {
         super(props);
         this.state = {  }
     }
-    render() { 
+
+
+    _callSave(){
+        alert("Save it!")
+    }
+    render() {
+        const { errors, isLoading } = this.state
+
         return ( 
             <View style={styles.container}>
                 <View style={styles.Header}>
@@ -61,7 +68,19 @@ class MyProfile extends Component {
                         </View>
 
                 </View> 
-                <View style={styles.btnContainer}></View>
+                <View style={styles.btnContainer}>
+                
+                        <TouchableOpacity onPress={this._callSave}>
+                            <View style={styles.btn}>
+                            {isLoading ? (
+                                <ActivityIndicator color="white" />
+                            ) : (
+                                <Text style={styles.buttonText}>ذخیره</Text>
+                                
+                            )}
+                            </View>
+                        </TouchableOpacity>
+                </View>
             </View>
          );
     }
@@ -81,8 +100,7 @@ const styles= StyleSheet.create({
         
     },
     form:{
-        flex:4,
-        backgroundColor:colors.silver,
+        flex:4, 
         padding:10,
 
 
@@ -97,9 +115,25 @@ const styles= StyleSheet.create({
         alignItems:'center',
         justifyContent: 'center',
     },
-    btnContainer:{
-        backgroundColor:colors.black,
-        flex:1,
-    }
+    btnContainer:{ 
+        flex:1, 
+        justifyContent: 'center',
+    },
+    btn: { 
+        backgroundColor: colors.blue,
+        borderRadius: 30,
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingVertical:12,
+        marginHorizontal:15,
+       
+
+      },
+      buttonText: {
+        fontSize:16,
+        color: colors.white,
+        fontFamily: 'IRANSans_Medium',
+      },
+
 })
 export default MyProfile;
