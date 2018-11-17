@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, {Component} from 'react'; 
 import {NavigationActions} from 'react-navigation';
-import {ScrollView, Text, View, StyleSheet } from 'react-native';
+import {ScrollView, Text, View, StyleSheet, ImageBackground } from 'react-native';
 
 //
 //
@@ -22,8 +22,11 @@ class SideMenu extends Component {
       <View style={styles.container}>
         <ScrollView>
           <View style={styles.headerContainer}>
-
+              <View  style={styles.imageAvator}>
+                  <Icon.Ionicons name="md-person" size={50} style={styles.iconNav} />
+              </View>
           </View>
+
           <View>
             <View style={styles.navSectionStyle}>
               <Text style={styles.navItemStyle} onPress={this.navigateToScreen('ProIndex')}>
@@ -104,10 +107,21 @@ const styles = StyleSheet.create({
       headerContainer:{
         height:200,
         backgroundColor: colors.red,
+        alignItems:'center',
+        justifyContent:'center'
 
       },
       iconNav:{
         paddingHorizontal:10,
+
+      },
+      imageAvator:{
+        backgroundColor: colors.white,
+        height:120,
+        width:120,
+        borderRadius:100,
+        alignItems:'center',
+        justifyContent:'center'
 
       }
       
