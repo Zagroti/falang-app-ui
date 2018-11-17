@@ -13,6 +13,7 @@ import colors from './styles/colors';
 //
 import SplashScreen from './splash';
 import MainScreen from './components/screens/main';
+import MyprofileScreen from './components/screens/myProfile';
 
 // auth root
 import AuthScreen from './components/auth/auth';
@@ -98,6 +99,9 @@ const MainStack = createStackNavigator({
     },
     Index : {
         screen : IndexScreen
+    },    
+    MyProfile : {
+        screen : MyprofileScreen
     },
 
     ProIndex : {

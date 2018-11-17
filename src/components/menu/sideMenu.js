@@ -29,14 +29,14 @@ class SideMenu extends Component {
 
           <View>
             <View style={styles.navSectionStyle}>
-              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('ProIndex')}>
+              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('MyProfile')}>
               پروفایل من
               </Text>
               <Icon.FontAwesome name="user-o" size={22} style={styles.iconNav} />
             </View>
 
             <View style={styles.navSectionStyle}>
-              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('ProIndex')}>
+              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('Index')}>
               مشاهده دروس
               </Text>
               <Icon.FontAwesome name="folder-o" size={22} style={styles.iconNav} />
