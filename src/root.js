@@ -15,7 +15,8 @@ import SplashScreen from './splash';
 import MainScreen from './components/screens/main';
 import MyprofileScreen from './components/screens/myProfile';
 import MyfavoritScreen from './components/screens/myFavorit';
-import AboutFalang from './components/screens/aboutFalang';
+import AboutFalangScreen from './components/screens/aboutFalang';
+import SettingScreen from './components/screens/setting';
 
 // auth root
 import AuthScreen from './components/auth/auth';
@@ -109,7 +110,10 @@ const MainStack = createStackNavigator({
         screen : MyfavoritScreen
     },    
     AboutFalang : {
-        screen : AboutFalang
+        screen : AboutFalangScreen
+    },    
+    Setting : {
+        screen : SettingScreen
     },
     ProIndex : {
         screen : ProScreen
@@ -180,7 +184,8 @@ export default class Root  extends React.Component{
 
     render(){
         return( 
-            <App />
+            <MyprofileScreen />
+            // <App />
         
         );
     }

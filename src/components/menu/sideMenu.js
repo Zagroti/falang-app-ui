@@ -51,7 +51,7 @@ class SideMenu extends Component {
 
 
             <View style={styles.navSectionStyle}>
-              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('ProIndex')}>
+              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('Setting')}>
               تنظیمات برنامه
               </Text>
               <Icon.Ionicons name="ios-settings" size={22} style={styles.iconNav} />
