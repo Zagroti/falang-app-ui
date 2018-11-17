@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native';
 
 //
 //
@@ -23,8 +23,9 @@ class MyProfile extends Component {
         return ( 
             <View style={styles.container}>
                 <View style={styles.Header}>
-                    <Text>My Profile is Hear</Text>
+                   <View style={styles.avatarContainer}></View>
                 </View>
+                
                 <View style={styles.form}>
                     <View style={styles.card}>
                             <TextInput 
@@ -49,10 +50,10 @@ class MyProfile extends Component {
                         <View style={styles.card}>
                             <TextInput 
                                             label="پست الکترونیک"
-                                            placeholder="nfo@example.com"
+                                            placeholder="info@example.com"
                                             style={styles.txtInput}
                                             maxLength={40}
-                                            keyboardType={'numeric'}
+                                            keyboardType={'string'}
                                             />
                                             
                         </View>
@@ -66,7 +67,7 @@ class MyProfile extends Component {
                                             />
                                             
                         </View>
-
+ 
                 </View> 
                 <View style={styles.btnContainer}>
                 
@@ -134,6 +135,14 @@ const styles= StyleSheet.create({
         color: colors.white,
         fontFamily: 'IRANSans_Medium',
       },
+      avatarContainer:{
+          backgroundColor:colors.white,
+          height:110,
+          width:110,
+          borderRadius:100,
+          borderWidth:5,
+          borderColor: colors.silver,
+      }
 
 })
 export default MyProfile;

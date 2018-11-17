@@ -47,7 +47,7 @@ const defaultNavigationOptions = {
       backgroundColor: colors.red,
       position: 'absolute',
       zIndex: 100,
-      elevation: 0,
+      elevation: 2,
       top: 0,
       left: 0,
       right: 0,  
@@ -95,7 +95,7 @@ const AuthLoadingScreen = StackNavigator({
 const MainStack = createStackNavigator({
     Main : {
         screen : MainScreen,
-        navigationOptions: ({ navigation }) => ({
+        navigationOptions: ({ navigation }) => ({ 
             title: 'Falang',  // Title to appear in status bar
             headerRight: <IconHeader name="menu" size={25} style={{paddingRight: 10}} color={colors.white} onPress={ () => navigation.openDrawer() } />
           })
@@ -184,9 +184,12 @@ export default class Root  extends React.Component{
 
     render(){
         return( 
-            <MyprofileScreen />
-            // <App />
+            // <SettingScreen />
+            // <MyprofileScreen />
+            <App />
         
         );
     }
 }
+
+

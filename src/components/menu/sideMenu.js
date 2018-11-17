@@ -21,32 +21,34 @@ class SideMenu extends Component {
     return (
       <View style={styles.container}>
         <ScrollView>
-          <View style={styles.headerContainer}>
-              <View  style={styles.imageAvator}>
-                  <Icon.Ionicons name="md-person" size={50} style={styles.iconNav} />
+          <ImageBackground source={require('../../assets/img/english.jpg')}  blurRadius={1} style={styles.headerContainer}>
+              <View style={ styles.overImage}>
+                <View  style={styles.imageAvator}>
+                    <Icon.Ionicons name="md-person" size={50} style={styles.iconNav} />
+                </View>
               </View>
-          </View>
+          </ImageBackground >
 
           <View>
             <View style={styles.navSectionStyle}>
               <Text style={styles.navItemStyle} onPress={this.navigateToScreen('MyProfile')}>
               پروفایل من
               </Text>
-              <Icon.FontAwesome name="user-o" size={22} style={styles.iconNav} />
+              <Icon.FontAwesome name="user-o" size={22} style={styles.iconNav} color={colors.red} />
             </View>
 
             <View style={styles.navSectionStyle}>
               <Text style={styles.navItemStyle} onPress={this.navigateToScreen('Index')}>
               مشاهده دروس
               </Text>
-              <Icon.FontAwesome name="folder-o" size={22} style={styles.iconNav} />
+              <Icon.FontAwesome name="folder-o" size={22} style={styles.iconNav} color={colors.red} />
             </View>
 
             <View style={styles.navSectionStyle}>
               <Text style={styles.navItemStyle} onPress={this.navigateToScreen('MyFavorit')}>
               کلمات مورد علاقه من
               </Text>
-              <Icon.FontAwesome name="heart-o" size={22} style={styles.iconNav} />
+              <Icon.FontAwesome name="heart-o" size={22} style={styles.iconNav} color={colors.red} />
             </View>
 
 
@@ -54,7 +56,7 @@ class SideMenu extends Component {
               <Text style={styles.navItemStyle} onPress={this.navigateToScreen('Setting')}>
               تنظیمات برنامه
               </Text>
-              <Icon.Ionicons name="ios-settings" size={22} style={styles.iconNav} />
+              <Icon.Ionicons name="ios-settings" size={22} style={styles.iconNav} color={colors.red} />
             </View>
 
 
@@ -62,7 +64,7 @@ class SideMenu extends Component {
               <Text style={styles.navItemStyle} onPress={this.navigateToScreen('AboutFalang')}>
               درباره فالنگ
               </Text>
-              <Icon.Ionicons name="ios-information-circle-outline" size={22} style={styles.iconNav} />
+              <Icon.Ionicons name="ios-information-circle-outline" size={22} style={styles.iconNav} color={colors.red} />
             </View>
 
 
@@ -106,9 +108,10 @@ const styles = StyleSheet.create({
       },
       headerContainer:{
         height:200,
-        backgroundColor: colors.red,
+        backgroundColor: 'rgba(69,85,117,0.9)',
         alignItems:'center',
-        justifyContent:'center'
+        justifyContent:'center',
+         
 
       },
       iconNav:{
@@ -121,8 +124,20 @@ const styles = StyleSheet.create({
         width:120,
         borderRadius:100,
         alignItems:'center',
-        justifyContent:'center'
+        justifyContent:'center',
+        borderWidth:5,
+        borderColor: 'rgba(241,241,241,0.8)'
 
+      },
+      overImage:{
+        backgroundColor: 'rgba(181,49,69,0.9)', 
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0, 
+        justifyContent:'center', 
+        alignItems:'center'
       }
       
 })
