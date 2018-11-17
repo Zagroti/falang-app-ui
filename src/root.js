@@ -1,7 +1,8 @@
 import React from 'react';
 import { createStackNavigator , StackNavigator , TabNavigator, SwitchNavigator, createDrawerNavigator} from 'react-navigation';
-import { Platform } from 'react-native';
+import { Platform , ScrollView, Text} from 'react-native';
 import SplashAuto from 'react-native-splash-screen';
+import IconHeader from 'react-native-vector-icons/dist/MaterialCommunityIcons';
 
 import colors from './styles/colors';
 
@@ -25,6 +26,9 @@ import PaymentScreen from './components/proComponent/payment';
 
 import TestScreen from './test';
 
+import SideBar from './components/menu/sideMenu';
+
+
 
 
 
@@ -42,9 +46,10 @@ const defaultNavigationOptions = {
       elevation: 0,
       top: 0,
       left: 0,
-      right: 0,
+      right: 0,  
     },
     headerTintColor: colors.white,
+    
   }
 
 
@@ -85,7 +90,11 @@ const AuthLoadingScreen = StackNavigator({
  // All orginal Component After login in hear ----->
 const MainStack = createStackNavigator({
     Main : {
-        screen : MainScreen
+        screen : MainScreen,
+        navigationOptions: ({ navigation }) => ({
+            title: 'Falang',  // Title to appear in status bar
+            headerRight: <IconHeader name="menu" size={25} style={{paddingRight: 10}} color={colors.white} onPress={ () => navigation.openDrawer() } />
+          })
     },
     Index : {
         screen : IndexScreen
@@ -116,9 +125,18 @@ const MainStack = createStackNavigator({
         screen : MainStack
     },
 
-},
-{
-    navigationOptions: {...defaultNavigationOptions}
+},{
+        drawerPosition:'right',    // right
+        drawerOpenRoute: "DrawerOpen",
+        drawerCloseRoute: "DrawerClose",
+        drawerToggleRoute: "DrawerToggle",
+        contentOptions: { activeTintColor: 'rgb(234, 94, 32)'  }, 
+        contentComponent: props => 
+  <ScrollView>
+    <SideBar {...props} />
+  </ScrollView>
+
+ 
 })
 
 

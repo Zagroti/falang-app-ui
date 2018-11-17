@@ -1,8 +1,13 @@
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
-import styles from './SideMenu.style';
+import React, {Component} from 'react'; 
 import {NavigationActions} from 'react-navigation';
 import {ScrollView, Text, View, StyleSheet } from 'react-native';
+
+//
+//
+import Icon  from '../../styles/icons'; 
+import colors from '../../styles/colors';
+
 
 class SideMenu extends Component {
   navigateToScreen = (route) => () => {
@@ -16,53 +21,78 @@ class SideMenu extends Component {
     return (
       <View style={styles.container}>
         <ScrollView>
-          <View>
-            <Text style={styles.sectionHeadingStyle}>
-              Section 1
-            </Text>
-            <View style={styles.navSectionStyle}>
-              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('Page1')}>
-              Page1
-              </Text>
-            </View>
+          <View style={styles.headerContainer}>
+
           </View>
           <View>
-            <Text style={styles.sectionHeadingStyle}>
-              Section 2
-            </Text>
             <View style={styles.navSectionStyle}>
-              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('Page2')}>
-                Page2
+              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('ProIndex')}>
+              پروفایل من
               </Text>
-              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('Page3')}>
-                Page3
-              </Text>
+              <Icon.FontAwesome name="user-o" size={22} style={styles.iconNav} />
             </View>
+
+            <View style={styles.navSectionStyle}>
+              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('ProIndex')}>
+              مشاهده دروس
+              </Text>
+              <Icon.FontAwesome name="folder-o" size={22} style={styles.iconNav} />
+            </View>
+
+            <View style={styles.navSectionStyle}>
+              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('ProIndex')}>
+              کلمات مورد علاقه من
+              </Text>
+              <Icon.FontAwesome name="heart-o" size={22} style={styles.iconNav} />
+            </View>
+
+
+            <View style={styles.navSectionStyle}>
+              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('ProIndex')}>
+              تنظیمات برنامه
+              </Text>
+              <Icon.Ionicons name="ios-settings" size={22} style={styles.iconNav} />
+            </View>
+
+
+            <View style={styles.navSectionStyle}>
+              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('ProIndex')}>
+              درباره فالنگ
+              </Text>
+              <Icon.Ionicons name="ios-information-circle-outline" size={22} style={styles.iconNav} />
+            </View>
+
+
           </View>
+   
         </ScrollView>
-        <View style={styles.footerContainer}>
-          <Text>This is my fixed footer</Text>
-        </View>
       </View>
     );
   }
 }
 
-SideMenu.propTypes = {
-  navigation: PropTypes.object
-};
+// SideMenu.propTypes = {
+//   navigation: PropTypes.object
+// };
 
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 20,
         flex: 1
       },
       navItemStyle: {
-        padding: 10
+        paddingRight: 15,
+        fontFamily:'IRANSans',
+
       },
       navSectionStyle: {
-        backgroundColor: 'lightgrey'
+        backgroundColor: colors.white,
+        flexDirection: 'row',
+        justifyContent:'flex-end',
+        alignItems: 'center',
+        borderBottomColor: '#F2F3F4',
+        borderBottomWidth:1,
+        paddingVertical:15,
       },
       sectionHeadingStyle: {
         paddingVertical: 10,
@@ -70,7 +100,15 @@ const styles = StyleSheet.create({
       },
       footerContainer: {
         padding: 20,
-        backgroundColor: 'lightgrey'
+      },
+      headerContainer:{
+        height:200,
+        backgroundColor: colors.red,
+
+      },
+      iconNav:{
+        paddingHorizontal:10,
+
       }
       
 })
