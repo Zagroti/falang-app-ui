@@ -59,7 +59,7 @@ class SideMenu extends Component {
 
 
             <View style={styles.navSectionStyle}>
-              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('ProIndex')}>
+              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('AboutFalang')}>
               درباره فالنگ
               </Text>
               <Icon.Ionicons name="ios-information-circle-outline" size={22} style={styles.iconNav} />

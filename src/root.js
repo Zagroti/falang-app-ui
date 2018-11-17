@@ -15,6 +15,7 @@ import SplashScreen from './splash';
 import MainScreen from './components/screens/main';
 import MyprofileScreen from './components/screens/myProfile';
 import MyfavoritScreen from './components/screens/myFavorit';
+import AboutFalang from './components/screens/aboutFalang';
 
 // auth root
 import AuthScreen from './components/auth/auth';
@@ -106,6 +107,9 @@ const MainStack = createStackNavigator({
     },   
     MyFavorit : {
         screen : MyfavoritScreen
+    },    
+    AboutFalang : {
+        screen : AboutFalang
     },
     ProIndex : {
         screen : ProScreen
