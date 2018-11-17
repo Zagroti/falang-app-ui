@@ -27,9 +27,9 @@ class ProIndex extends Component {
                 </View>
 
                 <View style={[styles.card, styles.p2]}>
-                    <Text>خودآموز هوشمند!</Text>
-                    <Text>با استفاده از این شما می توانید ان کنید</Text>
-                    <Text>همه چی به همین سادگی</Text>
+                    <Text style={styles.H1}>خودآموز هوشمند!</Text>
+                    <Text style={styles.H3}>با استفاده از این شما می توانید ان کنید</Text>
+                    <Text style={styles.H3}>همه چی به همین سادگی</Text>
                 </View>
 
                 <View style={[styles.card, styles.p2]}>
@@ -71,6 +71,19 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'center'
 
+
+    },
+    H1:{
+        fontFamily:'IRANSans',
+        fontSize:16,
+        color: colors.black,
+        fontWeight:'bold',
+
+    },
+    H3:{
+        fontFamily:'IRANSans',
+        fontSize:14,
+        color: colors.black,
 
     }
 })
