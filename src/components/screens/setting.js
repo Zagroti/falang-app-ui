@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     checkboxContainer:{
         flexDirection:'row', 
         backgroundColor:colors.white,
-        paddingHorizontal:15,
+        width:100,
         paddingVertical:5,
         borderRadius:50,
         justifyContent:'center',

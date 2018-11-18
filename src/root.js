@@ -184,9 +184,10 @@ export default class Root  extends React.Component{
 
     render(){
         return( 
+            <AboutFalangScreen />
             // <SettingScreen />
             // <MyprofileScreen />
-            <App />
+            // <App />
         
         );
     }
