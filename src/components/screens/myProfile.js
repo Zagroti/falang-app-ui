@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, KeyboardAvoidingView, Platform , ImageBackground} from 'react-native';
 
 //
 //
@@ -22,9 +22,11 @@ class MyProfile extends Component {
 
         return ( 
             <View style={styles.container}>
-                <View style={styles.Header}>
-                   <View style={styles.avatarContainer}></View>
-                </View>
+                <ImageBackground source={require('../../assets/img/cover.jpg')} blurRadius={1} style={styles.Header}>
+                   <View style={styles.avatarContainer}>
+                        <Icon.Ionicons name="md-person" size={50} style={styles.iconNav} />
+                   </View>
+                </ImageBackground>
                 
                 <View style={styles.form}>
                     <View style={styles.card}>
@@ -140,9 +142,16 @@ const styles= StyleSheet.create({
           height:110,
           width:110,
           borderRadius:100,
-          borderWidth:5,
-          borderColor: colors.silver,
-      }
+          borderWidth:10,
+          borderColor: 'rgba(228,228,228,0.5)',
+          justifyContent:'center',
+          alignItems:'center'
+          
+      },
+      iconNav:{
+        paddingHorizontal:10,
+
+      },
 
 })
 export default MyProfile;
