@@ -24,7 +24,7 @@ class SideMenu extends Component {
           <ImageBackground source={require('../../assets/img/english.jpg')}  blurRadius={1} style={styles.headerContainer}>
               <View style={ styles.overImage}>
                 <View  style={styles.imageAvator}>
-                    <Icon.Ionicons name="md-person" size={50} style={styles.iconNav} />
+                    <Icon.Ionicons name="md-person" size={50}  />
                 </View>
               </View>
           </ImageBackground >
@@ -116,6 +116,7 @@ const styles = StyleSheet.create({
       },
       iconNav:{
         paddingHorizontal:10,
+        paddingRight:20,
 
       },
       imageAvator:{
